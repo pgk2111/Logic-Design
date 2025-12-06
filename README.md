@@ -1,1 +1,2 @@
-EE4449 class
+EE4449 class 
+Logic Design
