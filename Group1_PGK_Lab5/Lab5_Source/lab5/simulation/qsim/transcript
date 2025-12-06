@@ -1,0 +1,25 @@
+# do fpu.do
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 13:57:22 on May 10,2025
+# vlog -work work fpu.vo 
+# -- Compiling module mult
+# 
+# Top level modules:
+# 	mult
+# End time: 13:57:23 on May 10,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 13:57:23 on May 10,2025
+# vlog -work work Waveform.vwf.vt 
+# -- Compiling module mult_vlg_vec_tst
+# 
+# Top level modules:
+# 	mult_vlg_vec_tst
+# End time: 13:57:23 on May 10,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -novopt -c -t 1ps -L cyclonev_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.mult_vlg_vec_tst 
+# Start time: 13:57:23 on May 10,2025
+# ** Error (suppressible): (vsim-12110) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Error loading design
+# End time: 13:57:24 on May 10,2025, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 0

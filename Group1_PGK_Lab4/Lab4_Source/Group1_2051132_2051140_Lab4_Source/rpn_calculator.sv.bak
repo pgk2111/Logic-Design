@@ -1,0 +1,109 @@
+/*
+I got this Idea from the following link:
+Title: Polish Postfix Notation Calculator
+You can take a look at this very interesting project.
+*/
+module rpn_calculator(	
+	input wire clk,
+	input wire rst,	   
+	// Input variables
+	input 	wire input_stb,
+	input 	wire [6:0] input_data,
+	input 	wire  is_op,
+	output 	reg input_ack,	
+	// Output variables
+	output reg	[7:0] output_data
+	);
+
+///////////////////////////////////
+//Write your code from here
+assign input_ack = (state == IDLE) ? 1'b1 : 1'b0;
+assign is_equal = (input_data == 4'hE) ? 1'b1 : 1'b0;
+logic [7:0] reg1, reg2;
+logic push, pop;
+logic [6:0] in, out;
+
+typedef enum logic [2:0] {
+    IDLE = 3'b000,
+    PUSH = 3'b001,
+	 CAL1	= 3'b010,
+	 CAL2  = 3'b011,
+	 CAL3 = 3'b100,
+	 DISP = 3'b101
+} state_t;
+
+state_t state;
+
+//
+
+//
+always @(posedge clk) begin
+if(rst) begin
+	state <= IDLE;
+	reg1 <= 8'bx;
+	reg2 <= 8'bx;
+	push <= 0;
+	pop <= 0;
+	in <= 7'bx;
+	out <= 7'bx;
+	output_data <= 8'bx;
+end else begin
+	case(state) 
+	 IDLE: begin
+				push <= 1'b0;
+				if (input_stb) begin
+					if(is_op) begin
+					 if(is_equal) state <= DISP;
+					 else	state <= CAL1;
+					end else state <= PUSH;
+				end
+			 end
+	 PUSH: begin
+	       push <= 1'b1;
+			 in <= input_data;
+			 state <= IDLE;
+			 end
+	 CAL1: begin
+	       pop <= 1'b1;
+			 reg1 <= out;
+			 state <= CAL2;
+			 end
+	CAL2: begin
+			 pop <= 1'b1;
+			 reg2 <= out;
+			 state <= CAL3;
+			 end
+	CAL3: begin
+			 push <= 1'b1;
+			 pop <= 1'b0;
+			 case(input_data)
+				4'b1010:in <= reg1+reg2;
+				4'b1011:in <= reg1-reg2;
+				default: in <= 0;
+			 endcase
+			 state <= IDLE;
+			 end
+	DISP: output_data <= out;
+	endcase	
+end	
+end
+//
+
+
+//
+
+
+stack #(.WIDTH(8),
+		  .DEPTH(10))
+stack(
+	.clk(clk),
+	.rst(rst),
+	.push_stb(push),
+	.push_dat(in),
+	.pop_stb(pop),
+	.pop_dat(out)
+);
+
+///////////////////////////////////
+
+  endmodule

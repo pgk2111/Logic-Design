@@ -1,0 +1,37 @@
+module fifo (
+	input clk,
+	input rst,
+	input [23:0] data,
+	output [23:0] out
+);
+
+
+fifoctrl ctrl(
+     clkw(clkw), //clock write
+     clkr(clkr), //clock read
+     rst(rst),
+     
+     fiford(en1),    // FIFO control
+     fifowr(en2),
+
+     fifofull(full),  // high when fifo full
+     notempty(notempty),  // high when fifo not empty
+     fifolen,   // fifo length
+
+                // Connect to memories
+     write(wr),     // enable to write memories
+     wraddr(wradd),    // write address of memories
+     read(rd),      // enable to read memories
+     rdaddr(rdadd)     // read address of memories
+     );
+  
+	  
+ram2 mem(
+   data(data),
+	rdaddress,
+	rdclock,
+	rden,
+	wraddress,
+	wrclock,
+	wren,
+	q)

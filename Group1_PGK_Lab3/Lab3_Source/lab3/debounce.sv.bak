@@ -1,0 +1,45 @@
+module button_debounce (
+    input logic clk,          // Input clock (e.g., 50 MHz)
+    input logic reset_n,      // Active-low reset
+    input logic button_in,    // Raw button input signal
+    output logic button_out   // Debounced button output
+);
+    // Parameters for debounce time (10 ms)
+    parameter integer DEBOUNCE_TIME = 500_000; // 50 MHz * 0.01s = 500,000 cycles
+
+    // Registers to track button state and counter
+    logic button_sync_0, button_sync_1;
+    integer debounce_count;
+    logic stable_state;
+
+    // Synchronize button input to avoid metastability
+    always_ff @(posedge clk or negedge reset_n) begin
+        if (!reset_n) begin
+            button_sync_0 <= 1'b0;
+            button_sync_1 <= 1'b0;
+        end else begin
+            button_sync_0 <= button_in;
+            button_sync_1 <= button_sync_0;
+        end
+    end
+
+    // Debounce logic
+    always_ff @(posedge clk or negedge reset_n) begin
+        if (!reset_n) begin
+            debounce_count <= 0;
+            stable_state <= 1'b0;
+            button_out <= 1'b0;
+        end else begin
+            if (button_sync_1 == stable_state) begin
+                debounce_count <= 0; // Reset counter if input is stable
+            end else begin
+                debounce_count <= debounce_count + 1;
+                if (debounce_count >= DEBOUNCE_TIME) begin
+                    stable_state <= button_sync_1; // Update stable state
+                    button_out <= button_sync_1;    // Update output
+                    debounce_count <= 0;
+                end
+            end
+        end
+    end
+endmodule

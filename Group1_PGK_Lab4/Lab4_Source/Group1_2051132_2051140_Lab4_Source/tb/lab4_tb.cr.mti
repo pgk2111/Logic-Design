@@ -1,0 +1,22 @@
+D:/kp/Compressed/lab4_alt/lab4_alt/tb.sv {1 {vlog -work work -vopt -sv -coverExcludeDefault -nocoverfec -cover sbcefx3 -stats=none D:/kp/Compressed/lab4_alt/lab4_alt/tb.sv
+Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+-- Compiling module tb
+
+Top level modules:
+	tb
+
+} {} {}} D:/kp/Compressed/lab4_alt/lab4_alt/stack.sv {1 {vlog -work work -vopt -sv -coverExcludeDefault -nocoverfec -cover sbcefx3 -stats=none D:/kp/Compressed/lab4_alt/lab4_alt/stack.sv
+Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+-- Compiling module stack
+
+Top level modules:
+	stack
+
+} {} {}} D:/kp/Compressed/lab4_alt/lab4_alt/converter.sv {1 {vlog -work work -vopt -sv -coverExcludeDefault -nocoverfec -cover sbcefx3 -stats=none D:/kp/Compressed/lab4_alt/lab4_alt/converter.sv
+Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+-- Compiling module converter
+
+Top level modules:
+	converter
+
+} {} {}}

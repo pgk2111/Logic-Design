@@ -1,0 +1,3 @@
+Info (10281): Verilog HDL Declaration information at add_sub.sv(18): object "inexact" differs only in case from object "INEXACT" in the same scope File: D:/kp/Compressed/lab5/lab5/add_sub.sv Line: 18
+Info (10281): Verilog HDL Declaration information at mult.sv(19): object "INEXACT" differs only in case from object "inexact" in the same scope File: D:/kp/Compressed/lab5/lab5/mult.sv Line: 19
+Info (10281): Verilog HDL Declaration information at div.sv(14): object "INEXACT" differs only in case from object "inexact" in the same scope File: D:/kp/Compressed/lab5/lab5/div.sv Line: 14

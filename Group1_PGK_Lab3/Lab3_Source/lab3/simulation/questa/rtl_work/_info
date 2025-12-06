@@ -1,0 +1,177 @@
+m255
+K4
+z2
+!s12c _opt
+Z0 !s99 nomlopt
+!s11f vlog 2023.3 2023.07, Jul 17 2023
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 dE:/labsyns/lab3/simulation/questa
+T_opt
+!s110 1730995374
+Va]NH]PdTMO_Vo5ai5TNZ<2
+04 8 4 work top_lab3 fast 0
+=1-7085c2c402e1-672ce4ac-3e0-2b90
+R0
+!s12b OEM100
+!s124 OEM10U11 
+o-quiet -auto_acc_if_foreign -work work -L altera_mf_ver
+Z2 tCvgOpt 0
+n@_opt
+OL;O;2023.3;77
+vbcdtohex
+2E:/labsyns/lab3/bcdtohex.sv
+Z3 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z4 !s110 1730995331
+!i10b 1
+!s100 H@]hZ67ElS8:RX3EBdoaF3
+IWJUzYIk1:YF1jK=f4fA<W3
+S1
+R1
+w1730950597
+8E:/labsyns/lab3/bcdtohex.sv
+FE:/labsyns/lab3/bcdtohex.sv
+!i122 5
+L0 1 29
+Z5 VDg1SIo80bB@j0V0VzS_@n1
+Z6 OL;L;2023.3;77
+r1
+!s85 0
+31
+Z7 !s108 1730995331.000000
+!s107 E:/labsyns/lab3/bcdtohex.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+E:/labsyns/lab3|E:/labsyns/lab3/bcdtohex.sv|
+!i113 0
+Z8 o-sv -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z9 !s92 -sv -work work +incdir+E:/labsyns/lab3 -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R2
+vfifo
+2E:/labsyns/lab3/fifo.sv
+R3
+Z10 !s110 1730995329
+!i10b 1
+!s100 KZfJ5hJRadkg0hDa3==Eg0
+Iz`VgGgJ2lcmnK?XJ1AKRj1
+S1
+R1
+w1730952248
+8E:/labsyns/lab3/fifo.sv
+FE:/labsyns/lab3/fifo.sv
+!i122 1
+L0 2 57
+R5
+R6
+r1
+!s85 0
+31
+Z11 !s108 1730995329.000000
+!s107 E:/labsyns/lab3/fifo.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+E:/labsyns/lab3|E:/labsyns/lab3/fifo.sv|
+!i113 0
+R8
+R9
+R2
+vfifoctrl
+2E:/labsyns/lab3/fifoctrl.v
+R4
+!i10b 1
+!s100 zmRO6AGC8<=eo912G^7na2
+Ime5o?LZadcCRUIF0b`Uz70
+R1
+w1730995160
+8E:/labsyns/lab3/fifoctrl.v
+FE:/labsyns/lab3/fifoctrl.v
+!i122 4
+L0 2 103
+R5
+R6
+r1
+!s85 0
+31
+R7
+!s107 E:/labsyns/lab3/fifoctrl.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/labsyns/lab3|E:/labsyns/lab3/fifoctrl.v|
+!i113 0
+Z12 o-vlog01compat -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z13 !s92 -vlog01compat -work work +incdir+E:/labsyns/lab3 -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R2
+vlfshr
+2E:/labsyns/lab3/lfshr.sv
+R3
+Z14 !s110 1730995330
+!i10b 1
+!s100 Q;l;AYPL2H5_G@kIVZ?zQ2
+I@Ui2`ZiQ=FFW[Qz=D?86T3
+S1
+R1
+w1730994672
+8E:/labsyns/lab3/lfshr.sv
+FE:/labsyns/lab3/lfshr.sv
+!i122 3
+L0 1 20
+R5
+R6
+r1
+!s85 0
+31
+Z15 !s108 1730995330.000000
+!s107 E:/labsyns/lab3/lfshr.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+E:/labsyns/lab3|E:/labsyns/lab3/lfshr.sv|
+!i113 0
+R8
+R9
+R2
+vram2
+2E:/labsyns/lab3/ram2.v
+R10
+!i10b 1
+!s100 k4IZ>NCV:ffSTf[IE7dg@2
+If@>[=TRhNT2U@DVz;P=Kf2
+R1
+w1730572596
+8E:/labsyns/lab3/ram2.v
+FE:/labsyns/lab3/ram2.v
+!i122 0
+L0 40 79
+R5
+R6
+r1
+!s85 0
+31
+R11
+!s107 E:/labsyns/lab3/ram2.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/labsyns/lab3|E:/labsyns/lab3/ram2.v|
+!i113 0
+R12
+R13
+R2
+vtop_lab3
+2E:/labsyns/lab3/top_lab3.sv
+R3
+R14
+!i10b 1
+!s100 ]cJdHo7F1>hmizDBV[FaO1
+I?0Cc@S5aP[OZ7LnaScHYj2
+S1
+R1
+w1730993195
+8E:/labsyns/lab3/top_lab3.sv
+FE:/labsyns/lab3/top_lab3.sv
+!i122 2
+L0 1 52
+R5
+R6
+r1
+!s85 0
+31
+R15
+!s107 E:/labsyns/lab3/top_lab3.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+E:/labsyns/lab3|E:/labsyns/lab3/top_lab3.sv|
+!i113 0
+R8
+R9
+R2

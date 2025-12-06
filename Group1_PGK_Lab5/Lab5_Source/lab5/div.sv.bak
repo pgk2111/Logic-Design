@@ -1,0 +1,7 @@
+module div(a,b,mult_sel,result,flag);
+
+input  logic [18:0] a;
+input logic [18:0] b;
+input  logic mult_sel;
+output logic [18:0] result;
+output logic [4:0] flag;

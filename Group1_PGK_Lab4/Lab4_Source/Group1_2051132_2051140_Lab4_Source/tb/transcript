@@ -1,0 +1,46 @@
+# Compile of converter.sv was successful.
+# Compile of rpn_calculator.sv was successful.
+# Compile of stack.sv was successful.
+# Compile of tb.sv was successful.
+# 4 compiles, 0 failed with no errors.
+vsim work.tb
+# vsim work.tb 
+# Start time: 15:23:26 on Apr 15,2025
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: E:/labsyns/lab4_alt/rpn_calculator.sv(119): (vopt-2241) Connection width does not match width of port 'push_dat'. The port definition is at: E:/labsyns/lab4_alt/stack.sv(11).
+# ** Warning: E:/labsyns/lab4_alt/rpn_calculator.sv(119): (vopt-2241) Connection width does not match width of port 'pop_dat'. The port definition is at: E:/labsyns/lab4_alt/stack.sv(13).
+# ** Warning: E:\labsyns\lab4_alt\tb.sv(16): (vopt-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 7, found 6.
+# ** Warning: E:\labsyns\lab4_alt\tb.sv(16): (vopt-2718) [TFMPC] - Missing connection for port 'error'.
+# ** Warning: E:/labsyns/lab4_alt/rpn_calculator.sv(52): (vopt-3838) Variable 'out' written by continuous and procedural assignments. 
+# One of the assignments is implicit. See E:/labsyns/lab4_alt/rpn_calculator.sv(125). 
+# ** Note: (vopt-143) Recognized 1 FSM in module "rpn_calculator(fast)".
+# ** Note: (vopt-143) Recognized 1 FSM in module "converter(fast)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=5.
+# Loading sv_std.std
+# Loading work.tb(fast)
+# Compile of converter.sv was successful.
+# Compile of rpn_calculator.sv was successful.
+# Compile of stack.sv was successful.
+# Compile of tb.sv was successful.
+# 4 compiles, 0 failed with no errors.
+vsim work.tb
+# End time: 15:24:25 on Apr 15,2025, Elapsed time: 0:00:59
+# Errors: 0, Warnings: 8
+# vsim work.tb 
+# Start time: 15:24:25 on Apr 15,2025
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: E:/labsyns/lab4_alt/rpn_calculator.sv(119): (vopt-2241) Connection width does not match width of port 'push_dat'. The port definition is at: E:/labsyns/lab4_alt/stack.sv(11).
+# ** Warning: E:/labsyns/lab4_alt/rpn_calculator.sv(119): (vopt-2241) Connection width does not match width of port 'pop_dat'. The port definition is at: E:/labsyns/lab4_alt/stack.sv(13).
+# ** Warning: E:/labsyns/lab4_alt/rpn_calculator.sv(52): (vopt-3838) Variable 'out' written by continuous and procedural assignments. 
+# One of the assignments is implicit. See E:/labsyns/lab4_alt/rpn_calculator.sv(125). 
+# ** Note: (vopt-143) Recognized 1 FSM in module "rpn_calculator(fast)".
+# ** Note: (vopt-143) Recognized 1 FSM in module "converter(fast)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=3.
+# Loading sv_std.std
+# Loading work.tb(fast)
+add wave -position insertpoint sim:/tb/*
+run -all
+# Break key hit
+# Simulation stop requested.
+# End time: 15:26:15 on Apr 15,2025, Elapsed time: 0:01:50
+# Errors: 0, Warnings: 4

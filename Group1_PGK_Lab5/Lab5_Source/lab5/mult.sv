@@ -1,0 +1,121 @@
+module mult(a,b,mult_sel,result,flag);
+
+input  logic [18:0] a;
+input logic [18:0] b;
+input  logic mult_sel;
+output logic [18:0] result;
+output logic [4:0] flag;
+
+
+logic [21:0] t_m;
+logic [21:0] product;
+logic signed [9:0] t_e;
+logic sign;
+
+localparam INVALID             = 4;
+localparam DIVIDEBYZERO        = 3;
+localparam OVERFLOW            = 2;
+localparam UNDERFLOW           = 1;
+localparam INEXACT             = 0;
+
+
+logic sign_a, NaN_a, inf_a, zero_a, normal_a, denormal_a;
+logic sign_b, NaN_b, inf_b, zero_b, normal_b, denormal_b;
+logic [10:0] m_A, m_B,out_m;
+logic signed [9:0] e_A, e_B,out_e;
+logic inexact;
+
+decode A_dec(
+			.in(a),
+			.sign(sign_a),
+			.NaN(NaN_a),
+			.inf(inf_a),
+			.zero(zero_a),
+			.normal(normal_a),
+			.denormal(denormal_a),
+			.out_e(e_A),
+			.out_m(m_A)
+			);
+			
+decode B_dec(
+			.in(b),
+			.sign(sign_b),
+			.NaN(NaN_b),
+			.inf(inf_b),
+			.zero(zero_b),
+			.normal(normal_b),
+			.denormal(denormal_b),
+			.out_e(e_B),
+			.out_m(m_B)
+			);
+			
+wire [18:0] inf_def ;
+wire [18:0] zero_def ;
+wire [18:0] Nan_def ;
+wire [18:0] denorm_def ;
+
+assign inf_def = {sign,{8{1'b1}},{10{1'b0}}};
+assign zero_def = {1'b0,{8{1'b0}},{10{1'b0}}};
+assign Nan_def = {1'b0,{8{1'b1}},1'b1,{9{1'b0}}};
+assign denorm_def = {1'b0,{8{1'b0}},{10{1'b1}}};
+
+assign sign = a[18] ^ b[18];
+
+always_comb begin
+result = 0;
+t_m = 0;
+product = 0;
+t_e = 0;
+flag = 0;
+	if(mult_sel) begin
+						if (NaN_a || NaN_b) begin 
+							result = NaN_a ? a :b;
+							flag[INVALID] = 1'b1;
+						end
+						else if (inf_a || inf_b) begin
+							if (zero_a || zero_b) begin 
+								result = Nan_def;
+								flag[INVALID] = 1'b1;
+							end
+							else begin 
+							result = inf_def;
+							flag[OVERFLOW] = 1'b1;
+							end
+						end
+						else if (zero_a || zero_b) result = zero_def;
+						else begin
+							product = m_A * m_B;
+							t_m = product << ~product[21];
+							t_e = e_A + e_B + product[21];
+							if(out_e < -126) begin
+							result = zero_def;
+							flag[UNDERFLOW] = 1'b1;
+							end
+							else if(out_e > 127) begin
+							result = inf_def;
+							flag[OVERFLOW] = 1'b1;
+							end
+							else begin 
+							result[18] = sign;
+							result[17:10] = out_e + 127;
+							result[9:0] = out_m;
+							end
+							flag[INEXACT] = inexact;
+						end
+	end
+end
+
+
+
+encode #(22)
+OUT
+(
+			.in_e(t_e),
+			.in_m(t_m),
+			.out_e(out_e),
+			.out_m(out_m),
+			.inexact(inexact)
+);
+
+
+endmodule

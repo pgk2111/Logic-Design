@@ -1,0 +1,297 @@
+m255
+K4
+z2
+Z0 !s12c _opt2
+Z1 !s99 nomlopt
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+Z2 !s12c _opt1
+R1
+R2
+R1
+R0
+R1
+R0
+R1
+R2
+R1
+R2
+R1
+Z3 !s12c _opt
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R3
+R1
+!s11f vlog 2023.3 2023.07, Jul 17 2023
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z4 dC:/intelFPGA/23.1std
+T_opt
+!s110 1730728864
+VZ6LR=9;[]Gob2XN7jMc]O0
+Z5 04 9 4 work tb_assert fast 0
+=1-7085c2c402e1-6728d39e-184-4d8
+R1
+Z6 !s12b OEM100
+Z7 !s124 OEM10U4 
+o-quiet -auto_acc_if_foreign -work work -L altera_mf_ver +acc
+Z8 tCvgOpt 0
+n@_opt
+Z9 OL;O;2023.3;77
+R4
+T_opt1
+!s110 1730865031
+VSbB[c5:oLT42:_o7k5?@I3
+R5
+=1-7085c2c402e1-672ae784-3cd-49c
+R1
+R6
+R7
+o-quiet -auto_acc_if_foreign -work work -L altera_mf_ver
+R8
+n@_opt1
+R9
+R4
+T_opt2
+!s110 1743834593
+VV>N:N[nnfTzbN7=^hFkRl3
+R5
+=1-7085c2c402e1-67f0cde1-57-f4c
+R1
+R6
+R7
+o-quiet -auto_acc_if_foreign -work work -L altera_mf_ver -L altera_mf -L altera
+R8
+n@_opt2
+R9
+vfifo
+2E:/labsyns/lab3/fifo.sv
+Z10 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z11 !s110 1743834586
+!i10b 1
+!s100 KZfJ5hJRadkg0hDa3==Eg0
+IM>8a^hV^KJRn=[YDzAZ0_0
+S1
+Z12 dC:/intelFPGA/test
+w1730952248
+8E:/labsyns/lab3/fifo.sv
+FE:/labsyns/lab3/fifo.sv
+!i122 461
+L0 2 57
+Z13 VDg1SIo80bB@j0V0VzS_@n1
+Z14 OL;L;2023.3;77
+r1
+!s85 0
+31
+Z15 !s108 1743834586.000000
+!s107 E:/labsyns/lab3/fifo.sv|
+!s90 -reportprogress|300|-work|work|-source|-O0|-vopt|-sv|-coverExcludeDefault|-nocoverfec|-cover|sbcefx3|-stats=none|E:/labsyns/lab3/fifo.sv|
+!s101 -O0
+!i113 0
+!s102 -nocoverfec -cover sbcefx3
+o-work work -source -O0 -sv -coverexcludedefault -nocoverfec -cover sbcefx3 -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R8
+vfifoctrl
+2E:/labsyns/lab3/fifoctrl.v
+R10
+R11
+!i10b 1
+!s100 h6SO_GWzmV:mQ]>P=N?cK2
+IPPBBQP;:=kSzJ;CaI5liD1
+S1
+R12
+w1743778763
+8E:/labsyns/lab3/fifoctrl.v
+FE:/labsyns/lab3/fifoctrl.v
+!i122 462
+L0 2 106
+R13
+R14
+r1
+!s85 0
+31
+R15
+!s107 E:/labsyns/lab3/fifoctrl.v|
+!s90 -reportprogress|300|-work|work|-source|-O0|-vopt|-sv|-covercells|-coverExcludeDefault|-nocoverfec|-cover|sbcefx3|-stats=none|E:/labsyns/lab3/fifoctrl.v|
+!s101 -O0
+!i113 0
+Z16 !s102 -covercells -nocoverfec -cover sbcefx3
+o-work work -source -O0 -sv -covercells -coverexcludedefault -nocoverfec -cover sbcefx3 -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R8
+vram2
+2E:/labsyns/lab3/ram2.v
+R11
+!i10b 1
+!s100 o]>ER@?n=m]gQhg2kc;EX0
+Ia:WX:bQK]P1SaM6S4c>==0
+R12
+w1730572596
+8E:/labsyns/lab3/ram2.v
+FE:/labsyns/lab3/ram2.v
+!i122 463
+L0 40 79
+R13
+R14
+r1
+!s85 0
+31
+R15
+!s107 E:/labsyns/lab3/ram2.v|
+!s90 -reportprogress|300|-work|work|-source|-O0|-vopt|-covercells|-coverExcludeDefault|-nocoverfec|-cover|sbcefx3|-stats=none|E:/labsyns/lab3/ram2.v|
+!s101 -O0
+!i113 0
+R16
+o-work work -source -O0 -covercells -coverexcludedefault -nocoverfec -cover sbcefx3 -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R8
+vtb_assert
+2E:\labsyns\lab3\tb_assert.sv
+R10
+R11
+!i10b 1
+!s100 dMY=F`C^]Z0@^PJRoPm2n3
+ImiSHOJRmmkh@UL6IE4U:A3
+S1
+R12
+w1743834579
+8E:\labsyns\lab3\tb_assert.sv
+FE:\labsyns\lab3\tb_assert.sv
+!i122 460
+L0 2 276
+R13
+R14
+r1
+!s85 0
+31
+R15
+!s107 E:\labsyns\lab3\tb_assert.sv|
+!s90 -reportprogress|300|-work|work|-source|-O0|-vopt|-sv|-covercells|-coverExcludeDefault|-nocoverfec|-cover|sbceft3|-stats=none|E:\labsyns\lab3\tb_assert.sv|
+!s101 -O0
+!i113 0
+!s102 -covercells -nocoverfec -cover sbceft3
+o-work work -source -O0 -sv -covercells -coverexcludedefault -nocoverfec -cover sbceft3 -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R8

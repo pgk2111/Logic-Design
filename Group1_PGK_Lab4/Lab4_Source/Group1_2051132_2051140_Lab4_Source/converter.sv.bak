@@ -1,0 +1,183 @@
+/*
+I got this Idea from the following link:
+Title: Polish Postfix Notation Calculator
+*/
+module converter(	
+	input wire clk,
+	input wire rst,	   
+	// Input variables
+	input 	wire input_stb,
+	input 	wire [3:0] input_data,
+	output   logic ready,
+        output   logic [7:0] out
+);
+
+///////////////////////////////////
+//Write your code from here
+
+
+logic push_op, pop_op;
+logic [3:0] in_op, out_op;
+logic input_ack;
+logic output_stb;
+logic [6:0] output_data;
+logic is_output_op;
+logic output_ack;
+logic [6:0] temp, temp2;
+logic is_num_prev, is_num2_prev;
+logic [7:0] out_cal;
+
+typedef enum logic [3:0] {
+    IDLE	  = 4'b000,
+    NUM1= 4'b0001,
+    PUSH_NUM  = 4'b0010,
+	 PUSH = 4'b0011,
+	 POP = 4'b0100,
+	 NUM2 = 4'b0101,
+	 WAIT = 4'b0110,
+	 HOLD = 4'b0111,
+	 FIN = 4'b1001,
+	 ERROR = 4'b1010
+} state_t;
+
+state_t state;
+//
+
+assign is_num = (input_data < 4'hA) ? 1'b1 : 1'b0;
+assign is_op = (input_data == 4'hA || input_data == 4'hB || input_data == 4'hE) ? 1'b1 : 1'b0;
+assign is_equal = (input_data == 4'hE) ? 1'b1 : 1'b0;
+assign is_null = (!is_num && !is_op && !is_equal) ? 1'b1 : 1'b0;
+assign ready = (state == IDLE) ? 1'b1 : 1'b0;
+
+
+always @(posedge clk) begin
+if(rst) begin
+	state <= IDLE;
+	temp <= 7'b0;
+	temp2 <= 7'b0;
+	push_op <= 0;
+	pop_op <= 0;
+	in_op <= 0;
+	out_op <= 0;
+	out <= 8'b0;
+	output_stb <= 0;
+	is_output_op <= 0;
+	output_data <= 0;
+	is_num_prev <= 0;
+	is_num2_prev <= 0;
+end else
+		case(state)
+			IDLE: begin 
+						if (input_stb) begin
+							if(is_num) begin
+									if (is_num_prev) begin 
+											state <= NUM2;
+											is_num_prev <= 0;
+									end else if (is_num2_prev) begin
+											state <= ERROR;
+											is_num2_prev <= 0;
+									end else state <= NUM1;
+							end else if (is_op) begin
+												if(pop_op == 4'bx) begin 
+													if(is_num_prev || is_num2_prev) begin
+														state <= PUSH_NUM;
+													end else state <= ERROR;
+											    end else state <= PUSH_NUM;
+								end else state <= ERROR;
+							end else state <= IDLE; 
+						end
+			NUM1 :  begin 
+						state <= IDLE;
+						temp <= input_data;
+						out <= input_data;
+						is_num_prev <= 1'b1;
+					end
+			NUM2:	begin
+						temp2 <= input_data;
+						out <= temp*10 + input_data;
+						state <= IDLE;
+						is_num2_prev <= 1'b1;
+					end
+			WAIT: begin 
+			      output_stb <= 1'b0;
+					push_op <= 1'b0;
+					pop_op <= 1'b0;
+					if (output_ack) begin
+						if(out_op == 4'b1110) state <= FIN;
+					   else state <= IDLE;
+					end
+				   else state <= WAIT;
+					end
+			PUSH_NUM: begin
+			          output_stb <= 1'b1;
+						 is_output_op <= 1'b0;
+						 output_data <= temp*10 +temp2;
+						 is_num_prev <= 0;
+					    is_num2_prev <= 0;
+						 if (pop_op == 4'bx) state <= PUSH;
+						 else state <= HOLD;
+						 end
+			HOLD: begin 
+					   output_stb <= 1'b0;
+						temp <= 7'b0;
+						temp2 <= 7'b0;
+						if (output_ack) state <= POP;
+						else state <= HOLD;
+					end
+			POP : begin
+					 output_stb <= 1'b1;
+					 is_output_op <= 1'b1;
+					 output_data <= out_op;
+					 pop_op <= 1'b1;
+					 state <= PUSH;
+					 end
+			PUSH : begin 
+					 output_stb <= 1'b0;
+					 pop_op <= 1'b0;
+					 in_op <= input_data ;
+					 push_op <= 1'b1;
+					 state <= WAIT;
+					 end
+			ERROR: begin 
+						if (rst) state <= IDLE;
+						else state <= ERROR;
+					 end
+			FIN : begin
+			      output_stb <= 1'b1;
+					is_output_op <= 1'b1;
+					output_data <= out_op;
+					pop_op <= 1'b1;
+					state <= WAIT;
+					out <= out_cal;
+					end
+			default : state <= IDLE;
+		endcase
+end
+
+
+
+stack #(.WIDTH(4),
+		  .DEPTH(10))
+stack(
+	.clk(clk),
+	.rst(rst),
+	.push_stb(push_op),
+	.push_dat(in_op),
+	.pop_stb(pop_op),
+	.pop_dat(out_op)
+);		
+
+cal rpn_cal(
+		.clk(clk),
+		.rst(rst),
+		.input_stb(output_stb),
+		.input_data(output_data),
+		.is_op(is_output_op),
+		.input_ack(output_ack),
+		.output_data(out_cal)
+	);
+
+///////////////////////////////////
+
+
+  endmodule

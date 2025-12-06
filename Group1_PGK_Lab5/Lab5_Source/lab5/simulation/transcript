@@ -1,0 +1,177 @@
+# Compile of decode.sv was successful.
+# Compile of encode.sv was successful.
+# Compile of mult.sv was successful.
+# Compile of mult_tb.sv was successful.
+# Compile of add_sub.sv was successful.
+# Compile of div.sv was successful.
+# Compile of fpu_tb.sv was successful.
+# Compile of fpu_top.sv was successful.
+# 8 compiles, 0 failed with no errors.
+vsim work.fpu_tb
+# vsim work.fpu_tb 
+# Start time: 22:47:54 on May 23,2025
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: E:/labsyns/lab5/div.sv(138): (vopt-2241) Connection width does not match width of port 'out_m'. The port definition is at: E:/labsyns/lab5/encode.sv(1).
+# ** Warning: E:/labsyns/lab5/mult.sv(111): (vopt-2241) Connection width does not match width of port 'out_m'. The port definition is at: E:/labsyns/lab5/encode.sv(1).
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=2.
+# Loading sv_std.std
+# Loading work.fpu_tb(fast)
+add wave -position insertpoint sim:/fpu_tb/*
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: Admin  Hostname: DESKTOP-EOJON2A  ProcessID: 12568
+#           Attempting to use alternate WLF file "./wlftq057ze".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftq057ze
+run -all
+# ADD
+# Output : 0 11111111 1000000000 3fe00
+# Correct: 0 11111111 10000000000000000000000 7fc00000
+#  
+# Output : 0 01111111 0000000000 1fc00
+# Correct: 0 01111111 00000000000000000000000 3f800000
+#  
+# Output : 0 11111111 0000000000 3fc00
+# Correct: 0 11111111 00000000000000000000000 7f800000
+#  
+# Output : 0 11111111 0000000000 3fc00
+# Correct: 0 11111111 00000000000000000000000 7f800000
+#  
+# ADD direct case
+# Output : 0 10001000 0110100000 221a0
+# Correct: 0 10001000 01101000000000000000000 44340000
+#  
+# Output : 0 10000110 0100011110 2191e
+# Correct: 0 10000110 01000111100000000000000 4323c000
+#  
+# Output : 0 10000010 0110110000 209b0
+# Correct: 0 10000010 01101100010000000000000 41362000
+#  
+# ADD random case
+# Output : 0 10101001 1010001000 2a688
+# Correct: 0 10101001 10100010000011011001011 54d106cb
+#  
+# Output : 1 11000000 0001010101 70055
+# Correct: 1 11000000 00010101010110100001011 e00aad0b
+#  
+# Output : 0 11100110 1001011100 39a5c
+# Correct: 0 11100110 10010111000101001001000 734b8a48
+#  
+# SUB
+# Output : 0 11111111 1000000000 3fe00
+# Correct: 0 11111111 10000000000000000000000 7fc00000
+#  
+# Output : 0 01111111 0000000000 1fc00
+# Correct: 0 01111111 00000000000000000000000 3f800000
+#  
+# Output : 0 11111111 0000000000 3fc00
+# Correct: 0 11111111 10000000000000000000000 7fc00000
+#  
+# Output : 0 11111111 0000000000 3fc00
+# Correct: 0 11111111 00000000000000000000000 7f800000
+#  
+# SUB direct case
+# Output : 0 10001000 0001100000 22060
+# Correct: 0 10001000 00011000000000000000000 440c0000
+#  
+# Output : 0 10000101 1001000000 21640
+# Correct: 0 10000101 10001111110000000000000 42c7e000
+#  
+# Output : 1 10000110 1101111010 61b7a
+# Correct: 1 10000110 11011110100000000000000 c36f4000
+#  
+# SUB random case
+# Output : 1 11011010 0111101000 769e8
+# Correct: 1 11011010 01111010000100011111000 ed3d08f8
+#  
+# Output : 0 11001100 1101000000 33340
+# Correct: 0 11001100 11010000001000000101001 66681029
+#  
+# Output : 0 10110000 1010110111 2c2b7
+# Correct: 0 10110000 10101101111010011111011 5856f4fb
+#  
+# MULT
+# Output : 0 11111111 1000000000 3fe00
+# Correct: 0 11111111 10000000000000000000000 7fc00000
+#  
+# Output : 0 00000000 0000000000 00000
+# Correct: 0 00000000 00000000000000000000000 00000000
+#  
+# Output : 0 11111111 0000000000 3fc00
+# Correct: 0 11111111 00000000000000000000000 7f800000
+#  
+# Output : 0 11111111 0000000000 3fc00
+# Correct: 0 11111111 00000000000000000000000 7f800000
+#  
+# Output : 0 11111111 1000000000 3fe00
+# Correct: 0 11111111 10000000000000000000000 7fc00000
+#  
+# MULT direct case
+# Output : 0 11000000 1111001110 303ce
+# Correct: 0 11000000 11110011100000000000000 6079c000
+#  
+# Output : 0 10001001 0100010010 22512
+# Correct: 0 10001001 01000100010000000000000 44a22000
+#  
+# Output : 0 10001100 1011011010 232da
+# Correct: 0 10001100 10110110100000000000000 465b4000
+#  
+# MULT random case
+# Output : 0 01110011 0000100001 1cc21
+# Correct: 0 01110011 00001000010011111110000 398427f0
+#  
+# Output : 1 10001101 1101000100 63744
+# Correct: 1 10001101 11010001100111100011000 c6e8cf18
+#  
+# Output : 0 10111000 0111011110 2e1de
+# Correct: 0 10111000 01110111110001000111001 5c3be239
+#  
+# DIV
+# Output : 0 11111111 1000000000 3fe00
+# Correct: 0 11111111 10000000000000000000000 7fc00000
+#  
+# Output : 0 00000000 0000000000 00000
+# Correct: 0 00000000 00000000000000000000000 00000000
+#  
+# Output : 0 11111111 0000000000 3fc00
+# Correct: 0 11111111 00000000000000000000000 7f800000
+#  
+# Output : 0 11111111 1000000000 3fe00
+# Correct: 0 11111111 10000000000000000000000 7fc00000
+#  
+# Output : 0 11111111 1000000000 3fe00
+# Correct: 0 11111111 10000000000000000000000 7fc00000
+#  
+# Output : 0 11111111 0000000000 3fc00
+# Correct: 0 11111111 00000000000000000000000 7f800000
+#  
+# Output : 0 00000000 0000000000 00000
+# Correct: 0 00000000 00000000000000000000000 00000000
+#  
+# DIV direct case
+# Output : 0 10000110 1001000000 21a40
+# Correct: 0 10000110 10010000000000000000000 43480000
+#  
+# Output : 0 10000100 0000101100 2102c
+# Correct: 0 10000100 00001011000000000000000 42058000
+#  
+# Output : 1 01111111 0010111111 5fcbf
+# Correct: 1 01111111 00101111110000000000000 bf97e000
+#  
+# DIV random case
+# Output : 0 00100011 1100011111 08f1f
+# Correct: 0 00100011 11000111100011001110110 11e3c676
+#  
+# Output : 1 00100010 1100010111 48b17
+# Correct: 1 00100010 11000101101110000010000 9162dc10
+#  
+# Output : 0 01001000 1011100110 122e6
+# Correct: 0 01001000 10111001100001000010111 245cc217
+#  
+# Done.
+# Failed = 0
+# ** Note: $finish    : E:/labsyns/lab5/simulation/fpu_tb.sv(459)
+#    Time: 19 us  Iteration: 0  Instance: /fpu_tb
+# 1
+# Break in Module fpu_tb at E:/labsyns/lab5/simulation/fpu_tb.sv line 459
+# End time: 22:48:55 on May 23,2025, Elapsed time: 0:01:01
+# Errors: 0, Warnings: 6

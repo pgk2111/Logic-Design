@@ -1,0 +1,22 @@
+E:/labsyns/lab3/ram2.v {1 {vlog -work work -source -O0 -vopt -covercells -coverExcludeDefault -nocoverfec -cover sbcefx3 -stats=none E:/labsyns/lab3/ram2.v
+Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+-- Compiling module ram2
+
+Top level modules:
+	ram2
+
+} {} {}} E:/labsyns/lab3/fifo.sv {1 {vlog -work work -source -O0 -vopt -sv -coverExcludeDefault -nocoverfec -cover sbcefx3 -stats=none E:/labsyns/lab3/fifo.sv
+Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+-- Compiling module fifo
+
+Top level modules:
+	fifo
+
+} {} {}} E:/labsyns/lab3/fifoctrl.v {1 {vlog -work work -source -O0 -vopt -sv -covercells -coverExcludeDefault -nocoverfec -cover sbcefx3 -stats=none E:/labsyns/lab3/fifoctrl.v
+Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+-- Compiling module fifoctrl
+
+Top level modules:
+	fifoctrl
+
+} {} {}}

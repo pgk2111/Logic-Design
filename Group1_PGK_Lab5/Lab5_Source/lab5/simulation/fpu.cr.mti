@@ -1,0 +1,50 @@
+D:/kp/Compressed/lab5/lab5/simulation/fpu_tb.sv {1 {vlog -work work -vopt -sv -covercells -coverExcludeDefault -nocoverfec -cover sbcefx3 -stats=none D:/kp/Compressed/lab5/lab5/simulation/fpu_tb.sv
+Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+-- Compiling module fpu_tb
+
+Top level modules:
+	fpu_tb
+
+} {} {}} D:/kp/Compressed/lab5/lab5/decode.sv {1 {vlog -work work -vopt -sv -covercells -coverExcludeDefault -nocoverfec -cover sbcefx3 -stats=none D:/kp/Compressed/lab5/lab5/decode.sv
+Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+-- Compiling module decode
+
+Top level modules:
+	decode
+
+} {} {}} D:/kp/Compressed/lab5/lab5/fpu_top.sv {1 {vlog -work work -vopt -sv -covercells -coverExcludeDefault -nocoverfec -cover sbcefx3 -stats=none D:/kp/Compressed/lab5/lab5/fpu_top.sv
+Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+-- Compiling module fpu_top
+
+Top level modules:
+	fpu_top
+
+} {} {}} D:/kp/Compressed/lab5/lab5/mult.sv {1 {vlog -work work -vopt -sv -covercells -coverExcludeDefault -nocoverfec -cover sbcefx3 -stats=none D:/kp/Compressed/lab5/lab5/mult.sv
+Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+-- Compiling module mult
+
+Top level modules:
+	mult
+
+} {} {}} D:/kp/Compressed/lab5/lab5/encode.sv {1 {vlog -work work -vopt -sv -covercells -coverExcludeDefault -nocoverfec -cover sbcefx3 -stats=none D:/kp/Compressed/lab5/lab5/encode.sv
+Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+-- Compiling module encode
+
+Top level modules:
+	encode
+
+} {} {}} D:/kp/Compressed/lab5/lab5/add_sub.sv {1 {vlog -work work -vopt -sv -covercells -coverExcludeDefault -nocoverfec -cover sbcefx3 -stats=none D:/kp/Compressed/lab5/lab5/add_sub.sv
+Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+-- Compiling module add_sub
+
+Top level modules:
+	add_sub
+
+} {} {}} D:/kp/Compressed/lab5/lab5/div.sv {1 {vlog -work work -vopt -sv -covercells -coverExcludeDefault -nocoverfec -cover sbcefx3 -stats=none D:/kp/Compressed/lab5/lab5/div.sv
+Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+-- Compiling module div
+
+Top level modules:
+	div
+
+} {} {}}

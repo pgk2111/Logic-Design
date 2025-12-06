@@ -1,0 +1,120 @@
+# Reading pref.tcl
+# //  Questa Intel Starter FPGA Edition-64
+# //  Version 2023.3 win64 Jul 17 2023
+# //
+# //  Copyright 1991-2023 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# do verification_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Questa Intel Starter FPGA Edition-64 vmap 2023.3 Lib Mapping Utility 2023.07 Jul 17 2023
+# vmap work rtl_work 
+# Copying C:/intelFPGA/23.1std/questa_fse/win64/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+E:/labsyns/lab3 {E:/labsyns/lab3/ram2.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 23:02:09 on Nov 07,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/labsyns/lab3" E:/labsyns/lab3/ram2.v 
+# -- Compiling module ram2
+# 
+# Top level modules:
+# 	ram2
+# End time: 23:02:09 on Nov 07,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+E:/labsyns/lab3 {E:/labsyns/lab3/fifo.sv}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 23:02:09 on Nov 07,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+E:/labsyns/lab3" E:/labsyns/lab3/fifo.sv 
+# -- Compiling module fifo
+# 
+# Top level modules:
+# 	fifo
+# End time: 23:02:09 on Nov 07,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+E:/labsyns/lab3 {E:/labsyns/lab3/top_lab3.sv}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 23:02:10 on Nov 07,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+E:/labsyns/lab3" E:/labsyns/lab3/top_lab3.sv 
+# -- Compiling module top_lab3
+# 
+# Top level modules:
+# 	top_lab3
+# End time: 23:02:10 on Nov 07,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+E:/labsyns/lab3 {E:/labsyns/lab3/lfshr.sv}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 23:02:10 on Nov 07,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+E:/labsyns/lab3" E:/labsyns/lab3/lfshr.sv 
+# -- Compiling module lfshr
+# 
+# Top level modules:
+# 	lfshr
+# End time: 23:02:10 on Nov 07,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+E:/labsyns/lab3 {E:/labsyns/lab3/fifoctrl.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 23:02:11 on Nov 07,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/labsyns/lab3" E:/labsyns/lab3/fifoctrl.v 
+# -- Compiling module fifoctrl
+# 
+# Top level modules:
+# 	fifoctrl
+# End time: 23:02:11 on Nov 07,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+E:/labsyns/lab3 {E:/labsyns/lab3/bcdtohex.sv}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 23:02:11 on Nov 07,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+E:/labsyns/lab3" E:/labsyns/lab3/bcdtohex.sv 
+# -- Compiling module bcdtohex
+# 
+# Top level modules:
+# 	bcdtohex
+# End time: 23:02:11 on Nov 07,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+vsim -gui -l msim_transcript work.top_lab3
+# vsim -gui -l msim_transcript work.top_lab3 
+# Start time: 23:02:28 on Nov 07,2024
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Error: E:/labsyns/lab3/ram2.v(71): Module 'altsyncram' is not defined.
+#  For instance 'altsyncram_component' at path 'top_lab3.fifo.mem'
+# Optimization failed
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=1, Warnings=0.
+# Error loading design
+# End time: 23:02:30 on Nov 07,2024, Elapsed time: 0:00:02
+# Errors: 1, Warnings: 0
+vsim -gui -l msim_transcript work.top_lab3 -L altera_mf_ver
+# vsim -gui -l msim_transcript work.top_lab3 -L altera_mf_ver 
+# Start time: 23:02:52 on Nov 07,2024
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: E:/labsyns/lab3/top_lab3.sv(28): (vopt-2241) Connection width does not match width of port 'out'. The port definition is at: E:/labsyns/lab3/lfshr.sv(1).
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.top_lab3(fast)
+add wave -position insertpoint sim:/top_lab3/*
+force -freeze sim:/top_lab3/clk_r 1 0, 0 {50 ps} -r 100
+force -freeze sim:/top_lab3/clk_w 1 0, 0 {100 ps} -r 200
+force -freeze sim:/top_lab3/KEY 3'b100 0
+run
+# Break key hit
+# Break in file E:/labsyns/lab3/top_lab3.sv
+step -current
+# Requested step location(s) not found!
+run -continue
+# Break key hit
+# Break in file E:/labsyns/lab3/top_lab3.sv
+# End time: 23:20:35 on Nov 07,2024, Elapsed time: 0:17:43
+# Errors: 0, Warnings: 1

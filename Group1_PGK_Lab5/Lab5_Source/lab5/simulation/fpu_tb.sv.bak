@@ -1,0 +1,440 @@
+
+//-----------------------------------------------------------
+// File: fpu_tb.v
+// FPU Test Bench
+//-----------------------------------------------------------
+`timescale 1 ns/100 ps
+module fpu_tb ();
+ //----------------------------------------------------------
+ // inputs to the DUT 
+ logic 	      clock;
+ logic	      rst;
+ logic	      valid;
+ logic [31:0] a, b;
+ logic [1:0] op;
+ logic [4:0] flags;
+ logic [31:0] correct;
+ logic	      check;
+ //----------------------------------------------------------
+ // outputs from the DUT 
+ logic [18:0] out;
+ //----------------------------------------------------------
+ // corner case logic
+ wire [18:0] inf_def ;
+ wire [18:0] zero_def ;
+ wire [18:0] Nan_def ;
+ wire [18:0] one_def ;
+
+ assign inf_def = {1'b0,{8{1'b1}},{10{1'b0}}};
+ assign zero_def = {1'b0,{8{1'b0}},{10{1'b0}}};
+ assign Nan_def = {1'b0,{8{1'b1}},1'b1,{9{1'b0}}};
+ assign one_def = 19'b0011111110000000000;
+ //assertion
+ property rst_all;
+	@(posedge clock) rst |-> ##1 (dut.sel == 0 && dut.result == 32'b0 && dut.flags == 0);
+ endproperty
+ 
+ property invalid_check;
+	@(posedge clock) disable iff(rst) (!dut.op_valid) |-> ##1 (dut.sel == 0 && dut.result == 32'b0 && flags == 0);
+ endproperty
+
+ property invalid_op_check;
+	@(posedge clock) disable iff(rst || !valid) (out == Nan_def )|-> ( flags[4] == 1);
+ endproperty
+
+ property oveflow_check;
+	@(posedge clock) disable iff(rst || !valid) (out == inf_def) |-> ( flags[2] == 1);
+ endproperty
+
+ property underflow_check;
+	@(posedge clock) disable iff(rst || !valid) (out == zero_def) |-> ( flags[1] == 1);
+ endproperty
+
+ property dividebyzero_check;
+	@(posedge clock) disable iff(rst || !valid) (op == 2'b10 && b[31:13] == zero_def) |-> ( flags[3] == 1);
+ endproperty
+
+ property result_check;
+	@(posedge clock) disable iff(rst) check |-> (correct[31:13] - out < 2); 
+ endproperty
+
+ int fail;
+ assert property (rst_all) else begin 
+	$error("rst error");
+	fail++;
+	end
+ assert property (invalid_op_check) else begin 
+	$error("flags invalid error");
+	fail++;
+	end
+ assert property (overflow_check) else begin 
+	$error("flags overflow error");
+	fail++;
+	end
+ assert property (underflow_check) else begin 
+	$error("flags underflow error");
+	fail++;
+	end
+ assert property (dividebyzero_check) else begin 
+	$error("flags dividebyzero error");
+	fail++;
+	end
+ assert property (result_check) else begin 
+	$error("result wrong");
+	fail++;
+	end
+ // instantiate the Device Under Test (DUT)
+ // using named instantiation
+ fpu_top dut (
+          .clk(clock),
+	  .reset(rst),
+	  .op_valid(valid),
+          .a(a[31:13]),
+          .b(b[31:13]),
+          .op_type(op),
+          .result(out),
+	  .flags(flags)
+        );
+ //----------------------------------------------------------
+ // create a 10Mhz clock
+ always
+ #100 clock = ~clock; // every 100 nanoseconds invert
+ //----------------------------------------------------------
+ // initial blocks are sequential and start at time 0
+ initial
+ begin
+ rst = 1'b1;
+ check = 1'b0;
+ a = 32'b0;
+ b = 32'b0;
+ correct = 32'b0;
+ #10
+ rst = 1'b0;
+ #10
+ valid = 1'b1;
+
+ clock = 0;
+//ADD
+    $display("ADD");
+    op = 2'b00;
+    //corner case
+    check = 1'b0;
+    a[31:13] = Nan_def;
+    b[31:13] = one_def;
+    correct[31:13] = Nan_def;
+    check = 1'b1;
+    #400 //Nan + 1 = Nan
+        $display ("Output : %b %b %b %h", out[18], out[17:10], out[9:0], out);
+        $display ("Correct: %b %b %b %h",correct[31], correct[30:23], correct[22:0], correct);
+        $display();
+    check = 1'b0;
+    a[31:13] = zero_def;
+    b[31:13] = one_def;
+    correct[31:13] = one_def;
+    check = 1'b1;
+    #400 //zero + 1 = 1
+        $display ("Output : %b %b %b %h", out[18], out[17:10], out[9:0], out);
+        $display ("Correct: %b %b %b %h",correct[31], correct[30:23], correct[22:0], correct);
+        $display();
+    check = 1'b0;
+    a[31:13] = inf_def;
+    b[31:13] = inf_def;
+    correct[31:13] = inf_def;
+    check = 1'b1;
+    #400 //inf + inf = inf
+        $display ("Output : %b %b %b %h", out[18], out[17:10], out[9:0], out);
+        $display ("Correct: %b %b %b %h",correct[31], correct[30:23], correct[22:0], correct);
+        $display();
+    check = 1'b0;
+    a[31:13] = inf_def;
+    b[31:13] = one_def;
+    correct[31:13] = inf_def;
+    check = 1'b1;
+    #400 //inf + 1 = inf
+        $display ("Output : %b %b %b %h", out[18], out[17:10], out[9:0], out);
+        $display ("Correct: %b %b %b %h",correct[31], correct[30:23], correct[22:0], correct);
+        $display();
+    correct = 32'b0;
+    //direct case
+    //random case
+    check = 1'b0;
+    a = 32'b01010100110100010000011011001011;
+    b = 32'b01000110011111001101000100000010;
+    correct = 32'b01010100110100010000011011001011;
+    check = 1'b1;
+    #400 //7182097000000.0 * 16180.252 = 7182097000000.0
+        $display ("Output : %b %b %b %h", out[18], out[17:10], out[9:0], out);
+        $display ("Correct: %b %b %b %h",correct[31], correct[30:23], correct[22:0], correct);
+        $display();
+    check = 1'b0;
+    a = 32'b10111110100010000111000111111010;
+    b = 32'b11100000000010101010110100001011;
+    correct = 32'b11100000000010101010110100001011;
+    check = 1'b1;
+    #400 //-0.26649457 * -3.997062e+19 = -3.997062e+19
+    	$display ("Output : %b %b %b %h", out[18], out[17:10], out[9:0], out);
+        $display ("Correct: %b %b %b %h",correct[31], correct[30:23], correct[22:0], correct);
+        $display();
+    check = 1'b0;
+    a = 32'b10101010111111101110111110110110;
+    b = 32'b01110011010010111000101001001000;
+    correct = 32'b01110011010010111000101001001000;
+    check = 1'b1;
+    #400 //-4.5285797e-13 * 1.6126113e+31 = 1.6126113e+31
+    	$display ("Output : %b %b %b %h", out[18], out[17:10], out[9:0], out);
+        $display ("Correct: %b %b %b %h",correct[31], correct[30:23], correct[22:0], correct);
+        $display();
+    #400
+    $display("SUB");
+    op = 2'b01;
+    //corner case
+    check = 1'b0;
+    a[31:13] = Nan_def;
+    b[31:13] = one_def;
+    correct[31:13] = Nan_def;
+    check = 1'b1;
+    #400 //Nan - 1 = Nan
+        $display ("Output : %b %b %b %h", out[18], out[17:10], out[9:0], out);
+        $display ("Correct: %b %b %b %h",correct[31], correct[30:23], correct[22:0], correct);
+        $display();
+    check = 1'b0;
+    a[31:13] = one_def;
+    b[31:13] = zero_def;
+    correct[31:13] = one_def;
+    check = 1'b1;
+    #400 //1 - zero = 1
+        $display ("Output : %b %b %b %h", out[18], out[17:10], out[9:0], out);
+        $display ("Correct: %b %b %b %h",correct[31], correct[30:23], correct[22:0], correct);
+        $display();
+    check = 1'b0;
+    a[31:13] = inf_def;
+    b[31:13] = inf_def;
+    correct[31:13] = Nan_def;
+    check = 1'b1;
+    #400 //inf - inf = NaN
+        $display ("Output : %b %b %b %h", out[18], out[17:10], out[9:0], out);
+        $display ("Correct: %b %b %b %h",correct[31], correct[30:23], correct[22:0], correct);
+        $display();
+    check = 1'b0;
+    a[31:13] = inf_def;
+    b[31:13] = one_def;
+    correct[31:13] = inf_def;
+    check = 1'b1;
+    #400 //inf - 1 = inf
+        $display ("Output : %b %b %b %h", out[18], out[17:10], out[9:0], out);
+        $display ("Correct: %b %b %b %h",correct[31], correct[30:23], correct[22:0], correct);
+        $display();
+    correct = 32'b0;
+    //direct case
+    //random case
+    check = 1'b0;
+    a = 32'b11101101001111010000100011111000;
+    b = 32'b00011111000011010101100111110010;
+    correct = 32'b11101101001111010000100011111000;
+    check = 1'b1;
+    #400 //-3.6564693e+27 * 2.9932312e-20 = -3.6564693e+27
+        $display ("Output : %b %b %b %h", out[18], out[17:10], out[9:0], out);
+        $display ("Correct: %b %b %b %h",correct[31], correct[30:23], correct[22:0], correct);
+        $display();
+    check = 1'b0;
+    a = 32'b01100110011010000001000000101001;
+    b = 32'b01010100101111111001111100000100;
+    correct = 32'b01100110011010000001000000101001;
+    check = 1'b1;
+    #400 //2.7397178e+23 * 6584053000000.0 = 2.7397178e+23
+        $display ("Output : %b %b %b %h", out[18], out[17:10], out[9:0], out);
+        $display ("Correct: %b %b %b %h",correct[31], correct[30:23], correct[22:0], correct);
+        $display();
+    check = 1'b0;
+    a = 32'b01010000111101001111010111000110;
+    b = 32'b11011000010101101111001100010001;
+    correct = 32'b01011000010101101111010011111011;
+    check = 1'b1;
+    #400 //32877982000.0 * -945357800000000.0 = 945390700000000.0
+        $display ("Output : %b %b %b %h", out[18], out[17:10], out[9:0], out);
+        $display ("Correct: %b %b %b %h",correct[31], correct[30:23], correct[22:0], correct);
+        $display();
+    #400
+//MULT
+   $display("MULT");
+    op = 2'b11;
+    //corner case
+    check = 1'b0;
+    a[31:13] = Nan_def;
+    b[31:13] = one_def;
+    correct[31:13] = Nan_def;
+    check = 1'b1;
+    #400 //Nan * 1 = Nan
+        $display ("Output : %b %b %b %h", out[18], out[17:10], out[9:0], out);
+        $display ("Correct: %b %b %b %h",correct[31], correct[30:23], correct[22:0], correct);
+        $display();
+    check = 1'b0;
+    a[31:13] = zero_def;
+    b[31:13] = one_def;
+    correct[31:13] = zero_def;
+    check = 1'b1;
+    #400 //zero * 1 = zero
+        $display ("Output : %b %b %b %h", out[18], out[17:10], out[9:0], out);
+        $display ("Correct: %b %b %b %h",correct[31], correct[30:23], correct[22:0], correct);
+        $display();
+    check = 1'b0;
+    a[31:13] = inf_def;
+    b[31:13] = inf_def;
+    correct[31:13] = inf_def;
+    check = 1'b1;
+    #400 //inf * inf = inf
+        $display ("Output : %b %b %b %h", out[18], out[17:10], out[9:0], out);
+        $display ("Correct: %b %b %b %h",correct[31], correct[30:23], correct[22:0], correct);
+        $display();
+    a[31:13] = inf_def;
+    b[31:13] = one_def;
+    correct[31:13] = inf_def;
+    check = 1'b1;
+    #400 //inf * 1 = inf
+        $display ("Output : %b %b %b %h", out[18], out[17:10], out[9:0], out);
+        $display ("Correct: %b %b %b %h",correct[31], correct[30:23], correct[22:0], correct);
+        $display();
+    check = 1'b0;
+    a[31:13] = inf_def;
+    b[31:13] = zero_def;
+    correct[31:13] = Nan_def;
+    check = 1'b1;
+    #400 //inf * 1 = inf
+        $display ("Output : %b %b %b %h", out[18], out[17:10], out[9:0], out);
+        $display ("Correct: %b %b %b %h",correct[31], correct[30:23], correct[22:0], correct);
+        $display();
+    correct = 32'b0;
+    //direct case
+    //random case
+    check = 1'b0;
+    a = 32'b00011011010100000000001101010000;
+    b = 32'b01011101101000101010010010111000;
+    correct = 32'b00111001100001000010011111110000;
+    check = 1'b1;
+    #400 //1.7206427e-22 * 1.4649618e+18 = 0.00025206758
+        $display ("Output : %b %b %b %h", out[18], out[17:10], out[9:0], out);
+        $display ("Correct: %b %b %b %h",correct[31], correct[30:23], correct[22:0], correct);
+        $display();
+    check = 1'b0;
+    a = 32'b01001001010011101111100100100100;
+    b = 32'b10111101000011111111101001010001;
+    correct = 32'b11000110111010001100111100011000;
+    check = 1'b1;
+    #400 //847762.25 * -0.03515083 = -29799.547
+        $display ("Output : %b %b %b %h", out[18], out[17:10], out[9:0], out);
+        $display ("Correct: %b %b %b %h",correct[31], correct[30:23], correct[22:0], correct);
+        $display();
+    check = 1'b0;
+    a = 32'b01010110011011101000111111011001;
+    b = 32'b01000101010010011001111000001100;
+    correct = 32'b01011100001110111110001000111001;
+    check = 1'b1;
+    #400 //65575397000000.0 * 3225.878 = 2.1153822e+17
+        $display ("Output : %b %b %b %h", out[18], out[17:10], out[9:0], out);
+        $display ("Correct: %b %b %b %h",correct[31], correct[30:23], correct[22:0], correct);
+        $display();
+    #400
+//DIV
+    $display("DIV");
+    op = 2'b10;
+    //corner case
+    check = 1'b0;
+    a[31:13] = Nan_def;
+    b[31:13] = one_def;
+    correct[31:13] = Nan_def;
+    check = 1'b1;
+    #400 //Nan / 1 = Nan
+        $display ("Output : %b %b %b %h", out[18], out[17:10], out[9:0], out);
+        $display ("Correct: %b %b %b %h",correct[31], correct[30:23], correct[22:0], correct);
+        $display();
+    check = 1'b0;
+    a[31:13] = zero_def;
+    b[31:13] = one_def;
+    correct[31:13] = zero_def;
+    check = 1'b1;
+    #400 //zero / 1 = zero
+        $display ("Output : %b %b %b %h", out[18], out[17:10], out[9:0], out);
+        $display ("Correct: %b %b %b %h",correct[31], correct[30:23], correct[22:0], correct);
+        $display();
+    check = 1'b0;
+    a[31:13] = one_def;
+    b[31:13] = zero_def;
+    correct[31:13] = inf_def;
+    check = 1'b1;
+    #400 //1 / zero = inf
+        $display ("Output : %b %b %b %h", out[18], out[17:10], out[9:0], out);
+        $display ("Correct: %b %b %b %h",correct[31], correct[30:23], correct[22:0], correct);
+        $display();
+    check = 1'b0;
+    a[31:13] = zero_def;
+    b[31:13] = zero_def;
+    correct[31:13] = Nan_def;
+    check = 1'b1;
+    #400 //zero / zero = NaN
+        $display ("Output : %b %b %b %h", out[18], out[17:10], out[9:0], out);
+        $display ("Correct: %b %b %b %h",correct[31], correct[30:23], correct[22:0], correct);
+        $display();
+    check = 1'b0;
+    a[31:13] = inf_def;
+    b[31:13] = inf_def;
+    correct[31:13] = Nan_def;
+    check = 1'b1;
+    #400 //inf / inf = NaN
+        $display ("Output : %b %b %b %h", out[18], out[17:10], out[9:0], out);
+        $display ("Correct: %b %b %b %h",correct[31], correct[30:23], correct[22:0], correct);
+        $display();
+    check = 1'b0;
+    a[31:13] = inf_def;
+    b[31:13] = one_def;
+    correct[31:13] = inf_def;
+    check = 1'b1;
+    #400 //inf * 1 = inf
+        $display ("Output : %b %b %b %h", out[18], out[17:10], out[9:0], out);
+        $display ("Correct: %b %b %b %h",correct[31], correct[30:23], correct[22:0], correct);
+        $display();
+    check = 1'b0;
+    a[31:13] = one_def;
+    b[31:13] = inf_def;
+    correct[31:13] = zero_def;
+    check = 1'b1;
+    #400 //1 / inf = zero
+        $display ("Output : %b %b %b %h", out[18], out[17:10], out[9:0], out);
+        $display ("Correct: %b %b %b %h",correct[31], correct[30:23], correct[22:0], correct);
+        $display();
+    correct = 32'b0;
+    //direct case
+    //random case
+    check = 1'b0;
+    a = 32'b00001101111001110000011100101100;
+    b = 32'b00111011100000011101001111110011;
+    correct = 32'b00010001111000111100011001110110;
+    check = 1'b1;
+    #400 //1.4238201e-30 * 0.003962034 = 3.5936596e-28
+        $display ("Output : %b %b %b %h", out[18], out[17:10], out[9:0], out);
+        $display ("Correct: %b %b %b %h",correct[31], correct[30:23], correct[22:0], correct);
+        $display();
+    check = 1'b0;
+    a = 32'b01001110010111110100100101011111;
+    b = 32'b11111100011110111111011111010001;
+    correct = 32'b10010001011000101101110000010000;
+    check = 1'b1;
+    #400 //936531900.0 * -5.2331713e+36 = -1.7896068e-28
+        $display ("Output : %b %b %b %h", out[18], out[17:10], out[9:0], out);
+        $display ("Correct: %b %b %b %h",correct[31], correct[30:23], correct[22:0], correct);
+ 	$display();
+    check = 1'b0;
+    a = 32'b00100011101110001101010001010010;
+    b = 32'b00111110110101100101010111100110;
+    correct = 32'b00100100010111001100001000010111;
+    check = 1'b1;
+    #400 //2.0039241e-17 * 0.4186241 = 4.7869296e-17
+        $display ("Output : %b %b %b %h", out[18], out[17:10], out[9:0], out);
+        $display ("Correct: %b %b %b %h",correct[31], correct[30:23], correct[22:0], correct);
+        $display();
+    $display ("Done.");
+    $display  ("Failed = %0d",fail); 
+    $finish;
+ // stop the simulation
+ end
+
+endmodule

@@ -1,0 +1,240 @@
+m255
+K4
+z2
+Z0 !s12c _opt1
+Z1 !s99 nomlopt
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+Z2 !s12c _opt
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+!s11f vlog 2023.3 2023.07, Jul 17 2023
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z3 dC:/intelFPGA/23.1std
+T_opt
+!s110 1744705466
+V<I:AOg^bD4^D1YTY>BhOU3
+Z4 04 2 4 work tb fast 0
+=1-7085c2c402e1-67fe17ba-b7-3754
+R1
+Z5 !s12b OEM100
+Z6 !s124 OEM10U5 
+Z7 o-quiet -auto_acc_if_foreign -work work
+Z8 tCvgOpt 0
+n@_opt
+Z9 OL;O;2023.3;77
+R3
+T_opt1
+!s110 1745839404
+Vg@B6:ki:;Nb_;6[=X_VKB3
+R4
+=1-2cf05d66220c-680f652b-345-4b80
+R1
+R5
+R6
+R7
+R8
+n@_opt1
+R9
+vconverter
+2D:/kp/Compressed/lab4_alt/lab4_alt/converter.sv
+Z10 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z11 !s110 1745839388
+!i10b 1
+!s100 WLc[<hOzoM8FR>mS48Y_@3
+ISjnYDYaZc]khG:Dnn0@=[1
+S1
+Z12 dD:/kp/Compressed/lab4_alt/lab4_alt/tb
+w1745839363
+8D:/kp/Compressed/lab4_alt/lab4_alt/converter.sv
+FD:/kp/Compressed/lab4_alt/lab4_alt/converter.sv
+!i122 168
+L0 5 199
+Z13 VDg1SIo80bB@j0V0VzS_@n1
+Z14 OL;L;2023.3;77
+r1
+!s85 0
+31
+Z15 !s108 1745839388.000000
+!s107 D:/kp/Compressed/lab4_alt/lab4_alt/converter.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-coverExcludeDefault|-nocoverfec|-cover|sbcefx3|-stats=none|D:/kp/Compressed/lab4_alt/lab4_alt/converter.sv|
+!i113 0
+Z16 !s102 -nocoverfec -cover sbcefx3
+Z17 o-work work -sv -coverexcludedefault -nocoverfec -cover sbcefx3 -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R8
+vrpn_calculator
+2D:/kp/Compressed/lab4_alt/lab4_alt/rpn_calculator.sv
+R10
+R11
+!i10b 1
+!s100 FS736biioI`cHZdNda=fC3
+I_XeIQIYm^WT:iok[R_4E]0
+S1
+R12
+w1745459062
+8D:/kp/Compressed/lab4_alt/lab4_alt/rpn_calculator.sv
+FD:/kp/Compressed/lab4_alt/lab4_alt/rpn_calculator.sv
+!i122 169
+L0 6 126
+R13
+R14
+r1
+!s85 0
+31
+R15
+!s107 D:/kp/Compressed/lab4_alt/lab4_alt/rpn_calculator.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-coverExcludeDefault|-nocoverfec|-cover|sbcefx3|-stats=none|D:/kp/Compressed/lab4_alt/lab4_alt/rpn_calculator.sv|
+!i113 0
+R16
+R17
+R8
+vrpn_converter
+2E:/labsyns/lab4_alt/converter.sv
+R10
+!s110 1744606283
+!i10b 1
+!s100 7lREM[8P^=2i5O=_;G:h^3
+IkSiToRihkGl9>;kRa@YAP3
+S1
+dE:/labsyns/lab4_alt/tb
+w1744605894
+8E:/labsyns/lab4_alt/converter.sv
+FE:/labsyns/lab4_alt/converter.sv
+!i122 0
+L0 5 179
+R13
+R14
+r1
+!s85 0
+31
+!s108 1744606283.000000
+!s107 E:/labsyns/lab4_alt/converter.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-coverExcludeDefault|-nocoverfec|-cover|sbcefx3|-stats=none|E:/labsyns/lab4_alt/converter.sv|
+!i113 0
+R16
+R17
+R8
+vstack
+2D:/kp/Compressed/lab4_alt/lab4_alt/stack.sv
+R10
+R11
+!i10b 1
+!s100 jC?ojnhQUQok[U^NTQMgA3
+IaMb50>ZTVJ>n;XAYF[AS?0
+S1
+R12
+w1744608794
+8D:/kp/Compressed/lab4_alt/lab4_alt/stack.sv
+FD:/kp/Compressed/lab4_alt/lab4_alt/stack.sv
+!i122 170
+L0 1 37
+R13
+R14
+r1
+!s85 0
+31
+R15
+!s107 D:/kp/Compressed/lab4_alt/lab4_alt/stack.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-coverExcludeDefault|-nocoverfec|-cover|sbcefx3|-stats=none|D:/kp/Compressed/lab4_alt/lab4_alt/stack.sv|
+!i113 0
+R16
+R17
+R8
+vtb
+2D:/kp/Compressed/lab4_alt/lab4_alt/tb.sv
+R10
+R11
+!i10b 1
+!s100 TBOcTEK=CZ@[69`W1Uo@00
+I7MnG:B2gSW01OQTRNoCS:2
+S1
+R12
+w1745838374
+8D:/kp/Compressed/lab4_alt/lab4_alt/tb.sv
+FD:/kp/Compressed/lab4_alt/lab4_alt/tb.sv
+!i122 171
+L0 3 123
+R13
+R14
+r1
+!s85 0
+31
+R15
+!s107 D:/kp/Compressed/lab4_alt/lab4_alt/tb.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-coverExcludeDefault|-nocoverfec|-cover|sbcefx3|-stats=none|D:/kp/Compressed/lab4_alt/lab4_alt/tb.sv|
+!i113 0
+R16
+R17
+R8

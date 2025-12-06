@@ -1,0 +1,21 @@
+
+State Machine - |top_lab3|debounce:key2|current_state
+Name current_state.STABLE current_state.RELEASE current_state.PRESS current_state.IDLE 
+current_state.IDLE 0 0 0 0 
+current_state.PRESS 0 0 1 1 
+current_state.RELEASE 0 1 0 1 
+current_state.STABLE 1 0 0 1 
+
+State Machine - |top_lab3|debounce:key1|current_state
+Name current_state.STABLE current_state.RELEASE current_state.PRESS current_state.IDLE 
+current_state.IDLE 0 0 0 0 
+current_state.PRESS 0 0 1 1 
+current_state.RELEASE 0 1 0 1 
+current_state.STABLE 1 0 0 1 
+
+State Machine - |top_lab3|debounce:key0|current_state
+Name current_state.STABLE current_state.RELEASE current_state.PRESS current_state.IDLE 
+current_state.IDLE 0 0 0 0 
+current_state.PRESS 0 0 1 1 
+current_state.RELEASE 0 1 0 1 
+current_state.STABLE 1 0 0 1 

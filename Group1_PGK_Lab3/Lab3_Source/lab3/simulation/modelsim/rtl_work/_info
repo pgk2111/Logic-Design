@@ -1,0 +1,79 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dE:/labsyns/lab3/simulation/modelsim
+vfifo
+DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z1 !s110 1730565308
+!i10b 1
+!s100 J@83n?MDLmOd`IbbD_R]O2
+I]9MV:?cQB`aJMG[:LnlD`3
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+!s105 fifo_sv_unit
+S1
+R0
+w1730544557
+8E:/labsyns/lab3/fifo.sv
+FE:/labsyns/lab3/fifo.sv
+L0 1
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1730565308.000000
+!s107 E:/labsyns/lab3/fifo.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+E:/labsyns/lab3|E:/labsyns/lab3/fifo.sv|
+!i113 1
+o-sv -work work
+!s92 -sv -work work +incdir+E:/labsyns/lab3
+Z5 tCvgOpt 0
+vfifoctrl
+!s110 1730565309
+!i10b 1
+!s100 ?h[a[XbS>[`:;BKKlY0?S0
+IIN=K4K31^3P^n;Tkj8U451
+R2
+R0
+w1729827333
+8E:/labsyns/lab3/fifoctrl.v
+FE:/labsyns/lab3/fifoctrl.v
+L0 1
+R3
+r1
+!s85 0
+31
+!s108 1730565309.000000
+!s107 E:/labsyns/lab3/fifoctrl.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/labsyns/lab3|E:/labsyns/lab3/fifoctrl.v|
+!i113 1
+Z6 o-vlog01compat -work work
+Z7 !s92 -vlog01compat -work work +incdir+E:/labsyns/lab3
+R5
+vram2
+R1
+!i10b 1
+!s100 2L52[4;DHLSg6?U`S08=B2
+IPT7QLicT6bc:Vh:F;CoNj3
+R2
+R0
+w1729825683
+8E:/labsyns/lab3/ram2.v
+FE:/labsyns/lab3/ram2.v
+L0 39
+R3
+r1
+!s85 0
+31
+R4
+!s107 E:/labsyns/lab3/ram2.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/labsyns/lab3|E:/labsyns/lab3/ram2.v|
+!i113 1
+R6
+R7
+R5

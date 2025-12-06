@@ -1,0 +1,1659 @@
+# Load canceled
+# Compile of tb_assert.sv was successful.
+# Compile of fifo.sv was successful.
+# Compile of fifoctrl.v was successful.
+# Compile of ram2.v was successful.
+# 4 compiles, 0 failed with no errors.
+vsim work.tb_assert -L altera_mf_ver -L altera_mf -L altera
+# vsim work.tb_assert -L altera_mf_ver -L altera_mf -L altera 
+# Start time: 12:56:22 on Apr 05,2025
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-2009) At least one design unit was compiled with optimization level -O0 or -O1.
+# Use vdir -l command to find such design units.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.tb_assert(fast)
+# Loading work.fifo(fast)
+# Loading altera_mf_ver.altsyncram(fast)
+add wave -position insertpoint sim:/tb_assert/*
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: Admin  Hostname: DESKTOP-EOJON2A  ProcessID: 1240
+#           Attempting to use alternate WLF file "./wlftcnxmmh".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftcnxmmh
+run -all
+# Starting test case 1: Writing into FIFO...
+#                   15 wrcnt=00, i_fifo=00153524
+#                   35 wrcnt=01, i_fifo=00895e81
+#                   55 wrcnt=02, i_fifo=0084d609
+#                   75 wrcnt=03, i_fifo=00f05663
+#                   95 wrcnt=04, i_fifo=00b97b0d
+#                  115 wrcnt=05, i_fifo=00df998d
+#                  135 wrcnt=06, i_fifo=00c28465
+#                  155 wrcnt=07, i_fifo=00375212
+#                  175 wrcnt=08, i_fifo=00f3e301
+#                  195 wrcnt=09, i_fifo=00d7cd0d
+#                  215 wrcnt=0a, i_fifo=0023f176
+#                  235 wrcnt=0b, i_fifo=008dcd3d
+#                  255 wrcnt=0c, i_fifo=00d457ed
+#                  275 wrcnt=0d, i_fifo=002df78c
+#                  295 wrcnt=0e, i_fifo=00fde9f9
+#                  315 wrcnt=0f, i_fifo=003724c6
+#                  335 wrcnt=10, i_fifo=00f784c5
+#                  355 wrcnt=11, i_fifo=0013d2aa
+#                  375 wrcnt=12, i_fifo=00aff7e5
+#                  395 wrcnt=13, i_fifo=00d27277
+#                  415 wrcnt=14, i_fifo=0032d612
+#                  435 wrcnt=15, i_fifo=00ecdb8f
+#                  455 wrcnt=16, i_fifo=003069f2
+#                  475 wrcnt=17, i_fifo=007696ce
+#                  495 wrcnt=18, i_fifo=00007ae8
+#                  515 wrcnt=19, i_fifo=00ca4ec5
+#                  535 wrcnt=1a, i_fifo=0058495c
+#                  555 wrcnt=1b, i_fifo=008e28bd
+#                  575 wrcnt=1c, i_fifo=00ab582d
+#                  595 wrcnt=1d, i_fifo=00a72665
+#                  615 wrcnt=1e, i_fifo=00ef6263
+#                  635 wrcnt=1f, i_fifo=0073870a
+# Test case 1 passed: FIFO is full after 32 writes
+# Starting test case 2: Reading from FIFO...
+# Test case 2 passed: FIFO is empty after 32 reads
+# Starting test case 3
+#                 1315 wrcnt=00, i_fifo=00642120
+# ** Error: inc rd wrong
+#    Time: 1345 ns Started: 1335 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 126
+#                 1355 wrcnt=01, i_fifo=007845aa
+#                 1395 wrcnt=02, i_fifo=00cccc9d
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 1315 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 635 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 615 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 595 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 575 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 555 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 535 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 515 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 495 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 475 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 455 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 435 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 415 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 395 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 375 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 355 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 335 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 315 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 295 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 275 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 255 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 235 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 215 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 195 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 175 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 155 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 135 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 115 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 95 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 75 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 55 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 35 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 15 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+#                 1435 wrcnt=03, i_fifo=00203e96
+#                 1475 wrcnt=04, i_fifo=0083b813
+# Test case 3 passed
+# Starting test case 4
+#                 1515 wrcnt=05, i_fifo=00bc380d
+#                 1535 wrcnt=06, i_fifo=00a7d653
+#                 1555 wrcnt=07, i_fifo=009fdd6b
+#                 1575 wrcnt=08, i_fifo=00a62ad5
+#                 1595 wrcnt=09, i_fifo=00174a02
+#                 1615 wrcnt=0a, i_fifo=00563eae
+#                 1635 wrcnt=0b, i_fifo=00ffe91d
+#                 1655 wrcnt=0c, i_fifo=00c572cf
+#                 1675 wrcnt=0d, i_fifo=00844923
+#                 1695 wrcnt=0e, i_fifo=0009650a
+#                 1715 wrcnt=0f, i_fifo=00730aca
+#                 1735 wrcnt=10, i_fifo=00314c3c
+#                 1755 wrcnt=11, i_fifo=0068bdf2
+#                 1775 wrcnt=12, i_fifo=002e618a
+#                 1795 wrcnt=13, i_fifo=00c4b341
+#                 1815 wrcnt=14, i_fifo=004b34d8
+#                 1835 wrcnt=15, i_fifo=0020f378
+#                 1855 wrcnt=16, i_fifo=008a1289
+#                 1875 wrcnt=17, i_fifo=00c50deb
+#                 1895 wrcnt=18, i_fifo=000265b6
+#                 1915 wrcnt=19, i_fifo=004bf9c6
+#                 1935 wrcnt=1a, i_fifo=001513ae
+#                 1955 wrcnt=1b, i_fifo=007502bc
+#                 1975 wrcnt=1c, i_fifo=000fdd2a
+#                 1995 wrcnt=1d, i_fifo=00d79a0b
+#                 2015 wrcnt=1e, i_fifo=0097be71
+#                 2035 wrcnt=1f, i_fifo=00f24185
+#                 2055 wrcnt=20, i_fifo=00f2554f
+#                 2075 wrcnt=00, i_fifo=00cc603b
+#                 2095 wrcnt=01, i_fifo=0006333a
+#                 2115 wrcnt=02, i_fifo=0023327e
+#                 2255 wrcnt=04, i_fifo=00d99bf1
+#                 2275 wrcnt=05, i_fifo=009c4bd9
+#                 2295 wrcnt=06, i_fifo=00230762
+#                 2315 wrcnt=07, i_fifo=0035fb4c
+# ** Error: inc rd wrong
+#    Time: 3365 ns Started: 3355 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 126
+# Test case 4 passed
+# Starting test case 5
+#                 3535 wrcnt=09, i_fifo=00f2ae3f
+# FAILED, num fail = 35
+# ** Note: $finish    : E:/labsyns/lab3/tb_assert.sv(262)
+#    Time: 3550 ns  Iteration: 0  Instance: /tb_assert
+# 1
+# Break in Module tb_assert at E:/labsyns/lab3/tb_assert.sv line 262
+# Compile of tb_assert.sv was successful.
+# Compile of fifo.sv was successful.
+# Compile of fifoctrl.v was successful.
+# Compile of ram2.v was successful.
+# 4 compiles, 0 failed with no errors.
+vsim -L altera_mf_ver -L altera_mf -L altera work.tb_assert
+# End time: 13:05:46 on Apr 05,2025, Elapsed time: 0:09:24
+# Errors: 35, Warnings: 6
+# vsim -L altera_mf_ver -L altera_mf -L altera work.tb_assert 
+# Start time: 13:05:46 on Apr 05,2025
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-2009) At least one design unit was compiled with optimization level -O0 or -O1.
+# Use vdir -l command to find such design units.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.tb_assert(fast)
+# Loading work.fifo(fast)
+# Loading altera_mf_ver.altsyncram(fast)
+add wave -position insertpoint sim:/tb_assert/*
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: Admin  Hostname: DESKTOP-EOJON2A  ProcessID: 1240
+#           Attempting to use alternate WLF file "./wlfthivkr1".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlfthivkr1
+add wave -position insertpoint sim:/tb_assert/uut/ctrl/*
+run -all
+# Starting test case 1: Writing into FIFO...
+#                   15 wrcnt=00, i_fifo=00153524
+#                   35 wrcnt=01, i_fifo=00895e81
+#                   55 wrcnt=02, i_fifo=0084d609
+#                   75 wrcnt=03, i_fifo=00f05663
+#                   95 wrcnt=04, i_fifo=00b97b0d
+#                  115 wrcnt=05, i_fifo=00df998d
+#                  135 wrcnt=06, i_fifo=00c28465
+#                  155 wrcnt=07, i_fifo=00375212
+#                  175 wrcnt=08, i_fifo=00f3e301
+#                  195 wrcnt=09, i_fifo=00d7cd0d
+#                  215 wrcnt=0a, i_fifo=0023f176
+#                  235 wrcnt=0b, i_fifo=008dcd3d
+#                  255 wrcnt=0c, i_fifo=00d457ed
+#                  275 wrcnt=0d, i_fifo=002df78c
+#                  295 wrcnt=0e, i_fifo=00fde9f9
+#                  315 wrcnt=0f, i_fifo=003724c6
+#                  335 wrcnt=10, i_fifo=00f784c5
+#                  355 wrcnt=11, i_fifo=0013d2aa
+#                  375 wrcnt=12, i_fifo=00aff7e5
+#                  395 wrcnt=13, i_fifo=00d27277
+#                  415 wrcnt=14, i_fifo=0032d612
+#                  435 wrcnt=15, i_fifo=00ecdb8f
+#                  455 wrcnt=16, i_fifo=003069f2
+#                  475 wrcnt=17, i_fifo=007696ce
+#                  495 wrcnt=18, i_fifo=00007ae8
+#                  515 wrcnt=19, i_fifo=00ca4ec5
+#                  535 wrcnt=1a, i_fifo=0058495c
+#                  555 wrcnt=1b, i_fifo=008e28bd
+#                  575 wrcnt=1c, i_fifo=00ab582d
+#                  595 wrcnt=1d, i_fifo=00a72665
+#                  615 wrcnt=1e, i_fifo=00ef6263
+#                  635 wrcnt=1f, i_fifo=0073870a
+# Test case 1 passed: FIFO is full after 32 writes
+# Starting test case 2: Reading from FIFO...
+# Test case 2 passed: FIFO is empty after 32 reads
+# Starting test case 3
+#                 1315 wrcnt=00, i_fifo=00642120
+# ** Error: inc rd wrong
+#    Time: 1345 ns Started: 1335 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 126
+#                 1355 wrcnt=01, i_fifo=007845aa
+#                 1395 wrcnt=02, i_fifo=00cccc9d
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 1315 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 635 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 615 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 595 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 575 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 555 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 535 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 515 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 495 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 475 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 455 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 435 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 415 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 395 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 375 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 355 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 335 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 315 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 295 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 275 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 255 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 235 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 215 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 195 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 175 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 155 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 135 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 115 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 95 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 75 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 55 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 35 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 15 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+#                 1435 wrcnt=03, i_fifo=00203e96
+#                 1475 wrcnt=04, i_fifo=0083b813
+# Test case 3 passed
+# Starting test case 4
+#                 1515 wrcnt=05, i_fifo=00bc380d
+#                 1535 wrcnt=06, i_fifo=00a7d653
+#                 1555 wrcnt=07, i_fifo=009fdd6b
+#                 1575 wrcnt=08, i_fifo=00a62ad5
+#                 1595 wrcnt=09, i_fifo=00174a02
+#                 1615 wrcnt=0a, i_fifo=00563eae
+#                 1635 wrcnt=0b, i_fifo=00ffe91d
+#                 1655 wrcnt=0c, i_fifo=00c572cf
+#                 1675 wrcnt=0d, i_fifo=00844923
+#                 1695 wrcnt=0e, i_fifo=0009650a
+#                 1715 wrcnt=0f, i_fifo=00730aca
+#                 1735 wrcnt=10, i_fifo=00314c3c
+#                 1755 wrcnt=11, i_fifo=0068bdf2
+#                 1775 wrcnt=12, i_fifo=002e618a
+#                 1795 wrcnt=13, i_fifo=00c4b341
+#                 1815 wrcnt=14, i_fifo=004b34d8
+#                 1835 wrcnt=15, i_fifo=0020f378
+#                 1855 wrcnt=16, i_fifo=008a1289
+#                 1875 wrcnt=17, i_fifo=00c50deb
+#                 1895 wrcnt=18, i_fifo=000265b6
+#                 1915 wrcnt=19, i_fifo=004bf9c6
+#                 1935 wrcnt=1a, i_fifo=001513ae
+#                 1955 wrcnt=1b, i_fifo=007502bc
+#                 1975 wrcnt=1c, i_fifo=000fdd2a
+#                 1995 wrcnt=1d, i_fifo=00d79a0b
+#                 2015 wrcnt=1e, i_fifo=0097be71
+#                 2035 wrcnt=1f, i_fifo=00f24185
+#                 2055 wrcnt=20, i_fifo=00f2554f
+#                 2075 wrcnt=00, i_fifo=00cc603b
+#                 2095 wrcnt=01, i_fifo=0006333a
+#                 2115 wrcnt=02, i_fifo=0023327e
+#                 2255 wrcnt=04, i_fifo=00d99bf1
+#                 2275 wrcnt=05, i_fifo=009c4bd9
+#                 2295 wrcnt=06, i_fifo=00230762
+#                 2315 wrcnt=07, i_fifo=0035fb4c
+# ** Error: inc rd wrong
+#    Time: 3365 ns Started: 3355 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 126
+# Test case 4 passed
+# Starting test case 5
+#                 3535 wrcnt=09, i_fifo=00f2ae3f
+# FAILED, num fail = 35
+# ** Note: $finish    : E:/labsyns/lab3/tb_assert.sv(262)
+#    Time: 3550 ns  Iteration: 0  Instance: /tb_assert
+# 1
+# Break in Module tb_assert at E:/labsyns/lab3/tb_assert.sv line 262
+# Compile of tb_assert.sv was successful.
+# Compile of fifo.sv was successful.
+# Compile of fifoctrl.v was successful.
+# Compile of ram2.v was successful.
+# 4 compiles, 0 failed with no errors.
+vsim -L altera_mf_ver -L altera_mf -L altera work.tb_assert
+# End time: 13:10:06 on Apr 05,2025, Elapsed time: 0:04:20
+# Errors: 35, Warnings: 5
+# vsim -L altera_mf_ver -L altera_mf -L altera work.tb_assert 
+# Start time: 13:10:06 on Apr 05,2025
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-2009) At least one design unit was compiled with optimization level -O0 or -O1.
+# Use vdir -l command to find such design units.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.tb_assert(fast)
+# Loading work.fifo(fast)
+# Loading altera_mf_ver.altsyncram(fast)
+add wave -position insertpoint sim:/tb_assert/*
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: Admin  Hostname: DESKTOP-EOJON2A  ProcessID: 1240
+#           Attempting to use alternate WLF file "./wlft93007n".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft93007n
+add wave -position insertpoint sim:/tb_assert/uut/ctrl/*
+run -all
+# Starting test case 1: Writing into FIFO...
+#                   15 wrcnt=00, i_fifo=00153524
+#                   35 wrcnt=01, i_fifo=00895e81
+#                   55 wrcnt=02, i_fifo=0084d609
+#                   75 wrcnt=03, i_fifo=00f05663
+#                   95 wrcnt=04, i_fifo=00b97b0d
+#                  115 wrcnt=05, i_fifo=00df998d
+#                  135 wrcnt=06, i_fifo=00c28465
+#                  155 wrcnt=07, i_fifo=00375212
+#                  175 wrcnt=08, i_fifo=00f3e301
+#                  195 wrcnt=09, i_fifo=00d7cd0d
+#                  215 wrcnt=0a, i_fifo=0023f176
+#                  235 wrcnt=0b, i_fifo=008dcd3d
+#                  255 wrcnt=0c, i_fifo=00d457ed
+#                  275 wrcnt=0d, i_fifo=002df78c
+#                  295 wrcnt=0e, i_fifo=00fde9f9
+#                  315 wrcnt=0f, i_fifo=003724c6
+#                  335 wrcnt=10, i_fifo=00f784c5
+#                  355 wrcnt=11, i_fifo=0013d2aa
+#                  375 wrcnt=12, i_fifo=00aff7e5
+#                  395 wrcnt=13, i_fifo=00d27277
+#                  415 wrcnt=14, i_fifo=0032d612
+#                  435 wrcnt=15, i_fifo=00ecdb8f
+#                  455 wrcnt=16, i_fifo=003069f2
+#                  475 wrcnt=17, i_fifo=007696ce
+#                  495 wrcnt=18, i_fifo=00007ae8
+#                  515 wrcnt=19, i_fifo=00ca4ec5
+#                  535 wrcnt=1a, i_fifo=0058495c
+#                  555 wrcnt=1b, i_fifo=008e28bd
+#                  575 wrcnt=1c, i_fifo=00ab582d
+#                  595 wrcnt=1d, i_fifo=00a72665
+#                  615 wrcnt=1e, i_fifo=00ef6263
+#                  635 wrcnt=1f, i_fifo=0073870a
+# Test case 1 passed: FIFO is full after 32 writes
+# Starting test case 2: Reading from FIFO...
+# Test case 2 passed: FIFO is empty after 32 reads
+# Starting test case 3
+#                 1315 wrcnt=00, i_fifo=00642120
+# ** Error: inc rd wrong
+#    Time: 1345 ns Started: 1335 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 126
+#                 1355 wrcnt=01, i_fifo=007845aa
+#                 1395 wrcnt=02, i_fifo=00cccc9d
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 1315 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 635 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 615 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 595 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 575 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 555 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 535 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 515 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 495 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 475 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 455 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 435 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 415 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 395 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 375 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 355 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 335 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 315 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 295 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 275 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 255 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 235 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 215 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 195 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 175 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 155 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 135 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 115 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 95 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 75 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 55 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 35 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1395 ns Started: 15 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 110
+#                 1395 rdcnt=01, o_fifo=7845aa
+#                 1435 wrcnt=03, i_fifo=00203e96
+#                 1475 wrcnt=04, i_fifo=0083b813
+# Test case 3 passed
+# Starting test case 4
+#                 1515 wrcnt=05, i_fifo=00bc380d
+#                 1535 wrcnt=06, i_fifo=00a7d653
+#                 1555 wrcnt=07, i_fifo=009fdd6b
+#                 1575 wrcnt=08, i_fifo=00a62ad5
+#                 1595 wrcnt=09, i_fifo=00174a02
+#                 1615 wrcnt=0a, i_fifo=00563eae
+#                 1635 wrcnt=0b, i_fifo=00ffe91d
+#                 1655 wrcnt=0c, i_fifo=00c572cf
+#                 1675 wrcnt=0d, i_fifo=00844923
+#                 1695 wrcnt=0e, i_fifo=0009650a
+#                 1715 wrcnt=0f, i_fifo=00730aca
+#                 1735 wrcnt=10, i_fifo=00314c3c
+#                 1755 wrcnt=11, i_fifo=0068bdf2
+#                 1775 wrcnt=12, i_fifo=002e618a
+#                 1795 wrcnt=13, i_fifo=00c4b341
+#                 1815 wrcnt=14, i_fifo=004b34d8
+#                 1835 wrcnt=15, i_fifo=0020f378
+#                 1855 wrcnt=16, i_fifo=008a1289
+#                 1875 wrcnt=17, i_fifo=00c50deb
+#                 1895 wrcnt=18, i_fifo=000265b6
+#                 1915 wrcnt=19, i_fifo=004bf9c6
+#                 1935 wrcnt=1a, i_fifo=001513ae
+#                 1955 wrcnt=1b, i_fifo=007502bc
+#                 1975 wrcnt=1c, i_fifo=000fdd2a
+#                 1995 wrcnt=1d, i_fifo=00d79a0b
+#                 2015 wrcnt=1e, i_fifo=0097be71
+#                 2035 wrcnt=1f, i_fifo=00f24185
+#                 2055 wrcnt=20, i_fifo=00f2554f
+#                 2075 wrcnt=00, i_fifo=00cc603b
+#                 2095 wrcnt=01, i_fifo=0006333a
+#                 2115 wrcnt=02, i_fifo=0023327e
+#                 2255 wrcnt=04, i_fifo=00d99bf1
+#                 2275 wrcnt=05, i_fifo=009c4bd9
+#                 2295 wrcnt=06, i_fifo=00230762
+#                 2315 wrcnt=07, i_fifo=0035fb4c
+# ** Error: inc rd wrong
+#    Time: 3365 ns Started: 3355 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 126
+# Test case 4 passed
+# Starting test case 5
+#                 3535 wrcnt=09, i_fifo=00f2ae3f
+# FAILED, num fail = 35
+# ** Note: $finish    : E:/labsyns/lab3/tb_assert.sv(262)
+#    Time: 3550 ns  Iteration: 0  Instance: /tb_assert
+# 1
+# Break in Module tb_assert at E:/labsyns/lab3/tb_assert.sv line 262
+# Compile of tb_assert.sv was successful.
+# Compile of fifo.sv was successful.
+# Compile of fifoctrl.v was successful.
+# Compile of ram2.v was successful.
+# 4 compiles, 0 failed with no errors.
+vsim -L altera_mf_ver -L altera_mf -L altera work.tb_assert
+# End time: 13:19:29 on Apr 05,2025, Elapsed time: 0:09:23
+# Errors: 35, Warnings: 5
+# vsim -L altera_mf_ver -L altera_mf -L altera work.tb_assert 
+# Start time: 13:19:29 on Apr 05,2025
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-2009) At least one design unit was compiled with optimization level -O0 or -O1.
+# Use vdir -l command to find such design units.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.tb_assert(fast)
+# Loading work.fifo(fast)
+# Loading altera_mf_ver.altsyncram(fast)
+add wave -position insertpoint sim:/tb_assert/*
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: Admin  Hostname: DESKTOP-EOJON2A  ProcessID: 1240
+#           Attempting to use alternate WLF file "./wlftg1mfna".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftg1mfna
+run -all
+# Starting test case 1: Writing into FIFO...
+#                   15 wrcnt=00, i_fifo=00153524
+#                   35 wrcnt=01, i_fifo=00895e81
+#                   55 wrcnt=02, i_fifo=0084d609
+#                   75 wrcnt=03, i_fifo=00f05663
+#                   95 wrcnt=04, i_fifo=00b97b0d
+#                  115 wrcnt=05, i_fifo=00df998d
+#                  135 wrcnt=06, i_fifo=00c28465
+#                  155 wrcnt=07, i_fifo=00375212
+#                  175 wrcnt=08, i_fifo=00f3e301
+#                  195 wrcnt=09, i_fifo=00d7cd0d
+#                  215 wrcnt=0a, i_fifo=0023f176
+#                  235 wrcnt=0b, i_fifo=008dcd3d
+#                  255 wrcnt=0c, i_fifo=00d457ed
+#                  275 wrcnt=0d, i_fifo=002df78c
+#                  295 wrcnt=0e, i_fifo=00fde9f9
+#                  315 wrcnt=0f, i_fifo=003724c6
+#                  335 wrcnt=10, i_fifo=00f784c5
+#                  355 wrcnt=11, i_fifo=0013d2aa
+#                  375 wrcnt=12, i_fifo=00aff7e5
+#                  395 wrcnt=13, i_fifo=00d27277
+#                  415 wrcnt=14, i_fifo=0032d612
+#                  435 wrcnt=15, i_fifo=00ecdb8f
+#                  455 wrcnt=16, i_fifo=003069f2
+#                  475 wrcnt=17, i_fifo=007696ce
+#                  495 wrcnt=18, i_fifo=00007ae8
+#                  515 wrcnt=19, i_fifo=00ca4ec5
+#                  535 wrcnt=1a, i_fifo=0058495c
+#                  555 wrcnt=1b, i_fifo=008e28bd
+#                  575 wrcnt=1c, i_fifo=00ab582d
+#                  595 wrcnt=1d, i_fifo=00a72665
+#                  615 wrcnt=1e, i_fifo=00ef6263
+#                  635 wrcnt=1f, i_fifo=0073870a
+# Test case 1 passed: FIFO is full after 32 writes
+# Starting test case 2: Reading from FIFO...
+# ** Error: write wrong
+#    Time: 695 ns Started: 635 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 111
+#                  695 rdcnt=01, o_fifo=895e81
+# ** Error: write wrong
+#    Time: 695 ns Started: 615 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 111
+#                  695 rdcnt=01, o_fifo=895e81
+# ** Error: write wrong
+#    Time: 695 ns Started: 595 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 111
+#                  695 rdcnt=01, o_fifo=895e81
+# ** Error: write wrong
+#    Time: 695 ns Started: 575 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 111
+#                  695 rdcnt=01, o_fifo=895e81
+# ** Error: write wrong
+#    Time: 695 ns Started: 555 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 111
+#                  695 rdcnt=01, o_fifo=895e81
+# ** Error: write wrong
+#    Time: 695 ns Started: 535 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 111
+#                  695 rdcnt=01, o_fifo=895e81
+# ** Error: write wrong
+#    Time: 695 ns Started: 515 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 111
+#                  695 rdcnt=01, o_fifo=895e81
+# ** Error: write wrong
+#    Time: 695 ns Started: 495 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 111
+#                  695 rdcnt=01, o_fifo=895e81
+# ** Error: write wrong
+#    Time: 695 ns Started: 475 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 111
+#                  695 rdcnt=01, o_fifo=895e81
+# ** Error: write wrong
+#    Time: 695 ns Started: 455 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 111
+#                  695 rdcnt=01, o_fifo=895e81
+# ** Error: write wrong
+#    Time: 695 ns Started: 435 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 111
+#                  695 rdcnt=01, o_fifo=895e81
+# ** Error: write wrong
+#    Time: 695 ns Started: 415 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 111
+#                  695 rdcnt=01, o_fifo=895e81
+# ** Error: write wrong
+#    Time: 695 ns Started: 395 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 111
+#                  695 rdcnt=01, o_fifo=895e81
+# ** Error: write wrong
+#    Time: 695 ns Started: 375 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 111
+#                  695 rdcnt=01, o_fifo=895e81
+# ** Error: write wrong
+#    Time: 695 ns Started: 355 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 111
+#                  695 rdcnt=01, o_fifo=895e81
+# ** Error: write wrong
+#    Time: 695 ns Started: 335 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 111
+#                  695 rdcnt=01, o_fifo=895e81
+# ** Error: write wrong
+#    Time: 695 ns Started: 315 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 111
+#                  695 rdcnt=01, o_fifo=895e81
+# ** Error: write wrong
+#    Time: 695 ns Started: 295 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 111
+#                  695 rdcnt=01, o_fifo=895e81
+# ** Error: write wrong
+#    Time: 695 ns Started: 275 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 111
+#                  695 rdcnt=01, o_fifo=895e81
+# ** Error: write wrong
+#    Time: 695 ns Started: 255 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 111
+#                  695 rdcnt=01, o_fifo=895e81
+# ** Error: write wrong
+#    Time: 695 ns Started: 235 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 111
+#                  695 rdcnt=01, o_fifo=895e81
+# ** Error: write wrong
+#    Time: 695 ns Started: 215 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 111
+#                  695 rdcnt=01, o_fifo=895e81
+# ** Error: write wrong
+#    Time: 695 ns Started: 195 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 111
+#                  695 rdcnt=01, o_fifo=895e81
+# ** Error: write wrong
+#    Time: 695 ns Started: 175 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 111
+#                  695 rdcnt=01, o_fifo=895e81
+# ** Error: write wrong
+#    Time: 695 ns Started: 155 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 111
+#                  695 rdcnt=01, o_fifo=895e81
+# ** Error: write wrong
+#    Time: 695 ns Started: 135 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 111
+#                  695 rdcnt=01, o_fifo=895e81
+# ** Error: write wrong
+#    Time: 695 ns Started: 115 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 111
+#                  695 rdcnt=01, o_fifo=895e81
+# ** Error: write wrong
+#    Time: 695 ns Started: 95 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 111
+#                  695 rdcnt=01, o_fifo=895e81
+# ** Error: write wrong
+#    Time: 695 ns Started: 75 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 111
+#                  695 rdcnt=01, o_fifo=895e81
+# ** Error: write wrong
+#    Time: 695 ns Started: 55 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 111
+#                  695 rdcnt=01, o_fifo=895e81
+#                  695 rdcnt=01, o_fifo=895e81
+# ** Error: write wrong
+#    Time: 695 ns Started: 15 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 111
+#                  695 rdcnt=01, o_fifo=895e81
+# Test case 2 passed: FIFO is empty after 32 reads
+# Starting test case 3
+#                 1315 wrcnt=00, i_fifo=00642120
+#                 1355 wrcnt=01, i_fifo=007845aa
+#                 1395 wrcnt=02, i_fifo=00cccc9d
+# ** Error: write wrong
+#    Time: 1415 ns Started: 1395 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 111
+#                 1415 rdcnt=01, o_fifo=7845aa
+#                 1415 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1415 ns Started: 1315 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 111
+#                 1415 rdcnt=01, o_fifo=7845aa
+#                 1435 wrcnt=03, i_fifo=00203e96
+#                 1475 wrcnt=04, i_fifo=0083b813
+# Test case 3 passed
+# Starting test case 4
+#                 1515 wrcnt=05, i_fifo=00bc380d
+#                 1535 wrcnt=06, i_fifo=00a7d653
+#                 1555 wrcnt=07, i_fifo=009fdd6b
+#                 1575 wrcnt=08, i_fifo=00a62ad5
+#                 1595 wrcnt=09, i_fifo=00174a02
+#                 1615 wrcnt=0a, i_fifo=00563eae
+#                 1635 wrcnt=0b, i_fifo=00ffe91d
+#                 1655 wrcnt=0c, i_fifo=00c572cf
+#                 1675 wrcnt=0d, i_fifo=00844923
+#                 1695 wrcnt=0e, i_fifo=0009650a
+#                 1715 wrcnt=0f, i_fifo=00730aca
+#                 1735 wrcnt=10, i_fifo=00314c3c
+#                 1755 wrcnt=11, i_fifo=0068bdf2
+#                 1775 wrcnt=12, i_fifo=002e618a
+#                 1795 wrcnt=13, i_fifo=00c4b341
+#                 1815 wrcnt=14, i_fifo=004b34d8
+#                 1835 wrcnt=15, i_fifo=0020f378
+#                 1855 wrcnt=16, i_fifo=008a1289
+#                 1875 wrcnt=17, i_fifo=00c50deb
+#                 1895 wrcnt=18, i_fifo=000265b6
+#                 1915 wrcnt=19, i_fifo=004bf9c6
+#                 1935 wrcnt=1a, i_fifo=001513ae
+#                 1955 wrcnt=1b, i_fifo=007502bc
+#                 1975 wrcnt=1c, i_fifo=000fdd2a
+#                 1995 wrcnt=1d, i_fifo=00d79a0b
+#                 2015 wrcnt=1e, i_fifo=0097be71
+#                 2035 wrcnt=1f, i_fifo=00f24185
+#                 2055 wrcnt=20, i_fifo=00f2554f
+#                 2075 wrcnt=00, i_fifo=00cc603b
+#                 2095 wrcnt=01, i_fifo=0006333a
+#                 2115 wrcnt=02, i_fifo=0023327e
+#                 2255 wrcnt=04, i_fifo=00d99bf1
+#                 2275 wrcnt=05, i_fifo=009c4bd9
+#                 2295 wrcnt=06, i_fifo=00230762
+#                 2315 wrcnt=07, i_fifo=0035fb4c
+# ** Error: write wrong
+#    Time: 3395 ns Started: 2315 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 111
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 2295 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 111
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 2275 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 111
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 2255 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 111
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 2115 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 111
+#                 3395 rdcnt=01, o_fifo=06333a
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 2075 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 111
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 2055 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 111
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 2035 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 111
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 2015 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 111
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 1995 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 111
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 1975 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 111
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 1955 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 111
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 1935 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 111
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 1915 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 111
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 1895 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 111
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 1875 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 111
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 1855 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 111
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 1835 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 111
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 1815 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 111
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 1795 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 111
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 1775 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 111
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 1755 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 111
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 1735 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 111
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 1715 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 111
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 1695 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 111
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 1675 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 111
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 1655 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 111
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 1635 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 111
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 1615 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 111
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 1595 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 111
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 1575 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 111
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 1555 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 111
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 1535 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 111
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 1515 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 111
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 1475 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 111
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 1435 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 111
+#                 3395 rdcnt=01, o_fifo=06333a
+# Test case 4 passed
+# Starting test case 5
+#                 3535 wrcnt=09, i_fifo=00f2ae3f
+# FAILED, num fail = 69
+# ** Note: $finish    : E:/labsyns/lab3/tb_assert.sv(263)
+#    Time: 3550 ns  Iteration: 0  Instance: /tb_assert
+# 1
+# Break in Module tb_assert at E:/labsyns/lab3/tb_assert.sv line 263
+# Compile of tb_assert.sv was successful.
+# Compile of fifo.sv was successful.
+# Compile of fifoctrl.v was successful.
+# Compile of ram2.v was successful.
+# 4 compiles, 0 failed with no errors.
+vsim -L altera_mf_ver -L altera_mf -L altera work.tb_assert
+# End time: 13:23:40 on Apr 05,2025, Elapsed time: 0:04:11
+# Errors: 69, Warnings: 5
+# vsim -L altera_mf_ver -L altera_mf -L altera work.tb_assert 
+# Start time: 13:23:40 on Apr 05,2025
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-2009) At least one design unit was compiled with optimization level -O0 or -O1.
+# Use vdir -l command to find such design units.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.tb_assert(fast)
+# Loading work.fifo(fast)
+# Loading altera_mf_ver.altsyncram(fast)
+add wave -position insertpoint sim:/tb_assert/*
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: Admin  Hostname: DESKTOP-EOJON2A  ProcessID: 1240
+#           Attempting to use alternate WLF file "./wlft6gx095".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft6gx095
+run -all
+# Starting test case 1: Writing into FIFO...
+#                   15 wrcnt=00, i_fifo=153524
+#                   35 wrcnt=01, i_fifo=895e81
+#                   55 wrcnt=02, i_fifo=84d609
+#                   75 wrcnt=03, i_fifo=f05663
+#                   95 wrcnt=04, i_fifo=b97b0d
+#                  115 wrcnt=05, i_fifo=df998d
+#                  135 wrcnt=06, i_fifo=c28465
+#                  155 wrcnt=07, i_fifo=375212
+#                  175 wrcnt=08, i_fifo=f3e301
+#                  195 wrcnt=09, i_fifo=d7cd0d
+#                  215 wrcnt=0a, i_fifo=23f176
+#                  235 wrcnt=0b, i_fifo=8dcd3d
+#                  255 wrcnt=0c, i_fifo=d457ed
+#                  275 wrcnt=0d, i_fifo=2df78c
+#                  295 wrcnt=0e, i_fifo=fde9f9
+#                  315 wrcnt=0f, i_fifo=3724c6
+#                  335 wrcnt=10, i_fifo=f784c5
+#                  355 wrcnt=11, i_fifo=13d2aa
+#                  375 wrcnt=12, i_fifo=aff7e5
+#                  395 wrcnt=13, i_fifo=d27277
+#                  415 wrcnt=14, i_fifo=32d612
+#                  435 wrcnt=15, i_fifo=ecdb8f
+#                  455 wrcnt=16, i_fifo=3069f2
+#                  475 wrcnt=17, i_fifo=7696ce
+#                  495 wrcnt=18, i_fifo=007ae8
+#                  515 wrcnt=19, i_fifo=ca4ec5
+#                  535 wrcnt=1a, i_fifo=58495c
+#                  555 wrcnt=1b, i_fifo=8e28bd
+#                  575 wrcnt=1c, i_fifo=ab582d
+#                  595 wrcnt=1d, i_fifo=a72665
+#                  615 wrcnt=1e, i_fifo=ef6263
+#                  635 wrcnt=1f, i_fifo=73870a
+# Test case 1 passed: FIFO is full after 32 writes
+# Starting test case 2: Reading from FIFO...
+# ** Error: write wrong
+#    Time: 695 ns Started: 635 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                  695 rdcnt=01, o_fifo=895e81
+# ** Error: write wrong
+#    Time: 695 ns Started: 615 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                  695 rdcnt=01, o_fifo=895e81
+# ** Error: write wrong
+#    Time: 695 ns Started: 595 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                  695 rdcnt=01, o_fifo=895e81
+# ** Error: write wrong
+#    Time: 695 ns Started: 575 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                  695 rdcnt=01, o_fifo=895e81
+# ** Error: write wrong
+#    Time: 695 ns Started: 555 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                  695 rdcnt=01, o_fifo=895e81
+# ** Error: write wrong
+#    Time: 695 ns Started: 535 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                  695 rdcnt=01, o_fifo=895e81
+# ** Error: write wrong
+#    Time: 695 ns Started: 515 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                  695 rdcnt=01, o_fifo=895e81
+# ** Error: write wrong
+#    Time: 695 ns Started: 495 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                  695 rdcnt=01, o_fifo=895e81
+# ** Error: write wrong
+#    Time: 695 ns Started: 475 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                  695 rdcnt=01, o_fifo=895e81
+# ** Error: write wrong
+#    Time: 695 ns Started: 455 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                  695 rdcnt=01, o_fifo=895e81
+# ** Error: write wrong
+#    Time: 695 ns Started: 435 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                  695 rdcnt=01, o_fifo=895e81
+# ** Error: write wrong
+#    Time: 695 ns Started: 415 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                  695 rdcnt=01, o_fifo=895e81
+# ** Error: write wrong
+#    Time: 695 ns Started: 395 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                  695 rdcnt=01, o_fifo=895e81
+# ** Error: write wrong
+#    Time: 695 ns Started: 375 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                  695 rdcnt=01, o_fifo=895e81
+# ** Error: write wrong
+#    Time: 695 ns Started: 355 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                  695 rdcnt=01, o_fifo=895e81
+# ** Error: write wrong
+#    Time: 695 ns Started: 335 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                  695 rdcnt=01, o_fifo=895e81
+# ** Error: write wrong
+#    Time: 695 ns Started: 315 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                  695 rdcnt=01, o_fifo=895e81
+# ** Error: write wrong
+#    Time: 695 ns Started: 295 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                  695 rdcnt=01, o_fifo=895e81
+# ** Error: write wrong
+#    Time: 695 ns Started: 275 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                  695 rdcnt=01, o_fifo=895e81
+# ** Error: write wrong
+#    Time: 695 ns Started: 255 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                  695 rdcnt=01, o_fifo=895e81
+# ** Error: write wrong
+#    Time: 695 ns Started: 235 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                  695 rdcnt=01, o_fifo=895e81
+# ** Error: write wrong
+#    Time: 695 ns Started: 215 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                  695 rdcnt=01, o_fifo=895e81
+# ** Error: write wrong
+#    Time: 695 ns Started: 195 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                  695 rdcnt=01, o_fifo=895e81
+# ** Error: write wrong
+#    Time: 695 ns Started: 175 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                  695 rdcnt=01, o_fifo=895e81
+# ** Error: write wrong
+#    Time: 695 ns Started: 155 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                  695 rdcnt=01, o_fifo=895e81
+# ** Error: write wrong
+#    Time: 695 ns Started: 135 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                  695 rdcnt=01, o_fifo=895e81
+# ** Error: write wrong
+#    Time: 695 ns Started: 115 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                  695 rdcnt=01, o_fifo=895e81
+# ** Error: write wrong
+#    Time: 695 ns Started: 95 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                  695 rdcnt=01, o_fifo=895e81
+# ** Error: write wrong
+#    Time: 695 ns Started: 75 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                  695 rdcnt=01, o_fifo=895e81
+# ** Error: write wrong
+#    Time: 695 ns Started: 55 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                  695 rdcnt=01, o_fifo=895e81
+#                  695 rdcnt=01, o_fifo=895e81
+# ** Error: write wrong
+#    Time: 695 ns Started: 15 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                  695 rdcnt=01, o_fifo=895e81
+# Test case 2 passed: FIFO is empty after 32 reads
+# Starting test case 3
+#                 1315 wrcnt=00, i_fifo=642120
+#                 1355 wrcnt=01, i_fifo=7845aa
+#                 1395 wrcnt=02, i_fifo=cccc9d
+# ** Error: write wrong
+#    Time: 1415 ns Started: 1395 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                 1415 rdcnt=01, o_fifo=7845aa
+#                 1415 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1415 ns Started: 1315 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                 1415 rdcnt=01, o_fifo=7845aa
+#                 1435 wrcnt=03, i_fifo=203e96
+#                 1475 wrcnt=04, i_fifo=83b813
+# Test case 3 passed
+# Starting test case 4
+#                 1515 wrcnt=05, i_fifo=bc380d
+#                 1535 wrcnt=06, i_fifo=a7d653
+#                 1555 wrcnt=07, i_fifo=9fdd6b
+#                 1575 wrcnt=08, i_fifo=a62ad5
+#                 1595 wrcnt=09, i_fifo=174a02
+#                 1615 wrcnt=0a, i_fifo=563eae
+#                 1635 wrcnt=0b, i_fifo=ffe91d
+#                 1655 wrcnt=0c, i_fifo=c572cf
+#                 1675 wrcnt=0d, i_fifo=844923
+#                 1695 wrcnt=0e, i_fifo=09650a
+#                 1715 wrcnt=0f, i_fifo=730aca
+#                 1735 wrcnt=10, i_fifo=314c3c
+#                 1755 wrcnt=11, i_fifo=68bdf2
+#                 1775 wrcnt=12, i_fifo=2e618a
+#                 1795 wrcnt=13, i_fifo=c4b341
+#                 1815 wrcnt=14, i_fifo=4b34d8
+#                 1835 wrcnt=15, i_fifo=20f378
+#                 1855 wrcnt=16, i_fifo=8a1289
+#                 1875 wrcnt=17, i_fifo=c50deb
+#                 1895 wrcnt=18, i_fifo=0265b6
+#                 1915 wrcnt=19, i_fifo=4bf9c6
+#                 1935 wrcnt=1a, i_fifo=1513ae
+#                 1955 wrcnt=1b, i_fifo=7502bc
+#                 1975 wrcnt=1c, i_fifo=0fdd2a
+#                 1995 wrcnt=1d, i_fifo=d79a0b
+#                 2015 wrcnt=1e, i_fifo=97be71
+#                 2035 wrcnt=1f, i_fifo=f24185
+#                 2055 wrcnt=20, i_fifo=f2554f
+#                 2075 wrcnt=00, i_fifo=cc603b
+#                 2095 wrcnt=01, i_fifo=06333a
+#                 2115 wrcnt=02, i_fifo=23327e
+#                 2255 wrcnt=04, i_fifo=d99bf1
+#                 2275 wrcnt=05, i_fifo=9c4bd9
+#                 2295 wrcnt=06, i_fifo=230762
+#                 2315 wrcnt=07, i_fifo=35fb4c
+# ** Error: write wrong
+#    Time: 3395 ns Started: 2315 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 2295 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 2275 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 2255 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 2115 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                 3395 rdcnt=01, o_fifo=06333a
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 2075 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 2055 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 2035 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 2015 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 1995 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 1975 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 1955 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 1935 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 1915 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 1895 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 1875 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 1855 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 1835 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 1815 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 1795 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 1775 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 1755 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 1735 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 1715 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 1695 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 1675 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 1655 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 1635 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 1615 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 1595 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 1575 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 1555 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 1535 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 1515 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 1475 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 1435 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                 3395 rdcnt=01, o_fifo=06333a
+# Test case 4 passed
+# Starting test case 5
+#                 3535 wrcnt=09, i_fifo=f2ae3f
+# FAILED, num fail = 69
+# ** Note: $finish    : E:/labsyns/lab3/tb_assert.sv(264)
+#    Time: 3550 ns  Iteration: 0  Instance: /tb_assert
+# 1
+# Break in Module tb_assert at E:/labsyns/lab3/tb_assert.sv line 264
+# Compile of tb_assert.sv was successful.
+# Compile of fifo.sv was successful.
+# Compile of fifoctrl.v was successful.
+# Compile of ram2.v was successful.
+# 4 compiles, 0 failed with no errors.
+vsim -L altera_mf_ver -L altera_mf -L altera work.tb_assert
+# End time: 13:26:44 on Apr 05,2025, Elapsed time: 0:03:04
+# Errors: 69, Warnings: 5
+# vsim -L altera_mf_ver -L altera_mf -L altera work.tb_assert 
+# Start time: 13:26:44 on Apr 05,2025
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-2009) At least one design unit was compiled with optimization level -O0 or -O1.
+# Use vdir -l command to find such design units.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.tb_assert(fast)
+# Loading work.fifo(fast)
+# Loading altera_mf_ver.altsyncram(fast)
+run -all
+# Starting test case 1: Writing into FIFO...
+#                   15 wrcnt=00, i_fifo=153524
+#                   35 wrcnt=01, i_fifo=895e81
+#                   55 wrcnt=02, i_fifo=84d609
+#                   75 wrcnt=03, i_fifo=f05663
+#                   95 wrcnt=04, i_fifo=b97b0d
+#                  115 wrcnt=05, i_fifo=df998d
+#                  135 wrcnt=06, i_fifo=c28465
+#                  155 wrcnt=07, i_fifo=375212
+#                  175 wrcnt=08, i_fifo=f3e301
+#                  195 wrcnt=09, i_fifo=d7cd0d
+#                  215 wrcnt=0a, i_fifo=23f176
+#                  235 wrcnt=0b, i_fifo=8dcd3d
+#                  255 wrcnt=0c, i_fifo=d457ed
+#                  275 wrcnt=0d, i_fifo=2df78c
+#                  295 wrcnt=0e, i_fifo=fde9f9
+#                  315 wrcnt=0f, i_fifo=3724c6
+#                  335 wrcnt=10, i_fifo=f784c5
+#                  355 wrcnt=11, i_fifo=13d2aa
+#                  375 wrcnt=12, i_fifo=aff7e5
+#                  395 wrcnt=13, i_fifo=d27277
+#                  415 wrcnt=14, i_fifo=32d612
+#                  435 wrcnt=15, i_fifo=ecdb8f
+#                  455 wrcnt=16, i_fifo=3069f2
+#                  475 wrcnt=17, i_fifo=7696ce
+#                  495 wrcnt=18, i_fifo=007ae8
+#                  515 wrcnt=19, i_fifo=ca4ec5
+#                  535 wrcnt=1a, i_fifo=58495c
+#                  555 wrcnt=1b, i_fifo=8e28bd
+#                  575 wrcnt=1c, i_fifo=ab582d
+#                  595 wrcnt=1d, i_fifo=a72665
+#                  615 wrcnt=1e, i_fifo=ef6263
+#                  635 wrcnt=1f, i_fifo=73870a
+# Test case 1 passed: FIFO is full after 32 writes
+# Starting test case 2: Reading from FIFO...
+# ** Error: write wrong
+#    Time: 695 ns Started: 635 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                  695 rdcnt=01, o_fifo=895e81
+# ** Error: write wrong
+#    Time: 695 ns Started: 615 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                  695 rdcnt=01, o_fifo=895e81
+# ** Error: write wrong
+#    Time: 695 ns Started: 595 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                  695 rdcnt=01, o_fifo=895e81
+# ** Error: write wrong
+#    Time: 695 ns Started: 575 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                  695 rdcnt=01, o_fifo=895e81
+# ** Error: write wrong
+#    Time: 695 ns Started: 555 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                  695 rdcnt=01, o_fifo=895e81
+# ** Error: write wrong
+#    Time: 695 ns Started: 535 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                  695 rdcnt=01, o_fifo=895e81
+# ** Error: write wrong
+#    Time: 695 ns Started: 515 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                  695 rdcnt=01, o_fifo=895e81
+# ** Error: write wrong
+#    Time: 695 ns Started: 495 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                  695 rdcnt=01, o_fifo=895e81
+# ** Error: write wrong
+#    Time: 695 ns Started: 475 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                  695 rdcnt=01, o_fifo=895e81
+# ** Error: write wrong
+#    Time: 695 ns Started: 455 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                  695 rdcnt=01, o_fifo=895e81
+# ** Error: write wrong
+#    Time: 695 ns Started: 435 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                  695 rdcnt=01, o_fifo=895e81
+# ** Error: write wrong
+#    Time: 695 ns Started: 415 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                  695 rdcnt=01, o_fifo=895e81
+# ** Error: write wrong
+#    Time: 695 ns Started: 395 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                  695 rdcnt=01, o_fifo=895e81
+# ** Error: write wrong
+#    Time: 695 ns Started: 375 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                  695 rdcnt=01, o_fifo=895e81
+# ** Error: write wrong
+#    Time: 695 ns Started: 355 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                  695 rdcnt=01, o_fifo=895e81
+# ** Error: write wrong
+#    Time: 695 ns Started: 335 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                  695 rdcnt=01, o_fifo=895e81
+# ** Error: write wrong
+#    Time: 695 ns Started: 315 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                  695 rdcnt=01, o_fifo=895e81
+# ** Error: write wrong
+#    Time: 695 ns Started: 295 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                  695 rdcnt=01, o_fifo=895e81
+# ** Error: write wrong
+#    Time: 695 ns Started: 275 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                  695 rdcnt=01, o_fifo=895e81
+# ** Error: write wrong
+#    Time: 695 ns Started: 255 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                  695 rdcnt=01, o_fifo=895e81
+# ** Error: write wrong
+#    Time: 695 ns Started: 235 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                  695 rdcnt=01, o_fifo=895e81
+# ** Error: write wrong
+#    Time: 695 ns Started: 215 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                  695 rdcnt=01, o_fifo=895e81
+# ** Error: write wrong
+#    Time: 695 ns Started: 195 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                  695 rdcnt=01, o_fifo=895e81
+# ** Error: write wrong
+#    Time: 695 ns Started: 175 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                  695 rdcnt=01, o_fifo=895e81
+# ** Error: write wrong
+#    Time: 695 ns Started: 155 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                  695 rdcnt=01, o_fifo=895e81
+# ** Error: write wrong
+#    Time: 695 ns Started: 135 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                  695 rdcnt=01, o_fifo=895e81
+# ** Error: write wrong
+#    Time: 695 ns Started: 115 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                  695 rdcnt=01, o_fifo=895e81
+# ** Error: write wrong
+#    Time: 695 ns Started: 95 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                  695 rdcnt=01, o_fifo=895e81
+# ** Error: write wrong
+#    Time: 695 ns Started: 75 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                  695 rdcnt=01, o_fifo=895e81
+# ** Error: write wrong
+#    Time: 695 ns Started: 55 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                  695 rdcnt=01, o_fifo=895e81
+#                  695 rdcnt=01, o_fifo=895e81
+# ** Error: write wrong
+#    Time: 695 ns Started: 15 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                  695 rdcnt=01, o_fifo=895e81
+# Test case 2 passed: FIFO is empty after 32 reads
+# Starting test case 3
+#                 1315 wrcnt=00, i_fifo=642120
+#                 1355 wrcnt=01, i_fifo=7845aa
+#                 1395 wrcnt=02, i_fifo=cccc9d
+# ** Error: write wrong
+#    Time: 1415 ns Started: 1395 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                 1415 rdcnt=01, o_fifo=7845aa
+#                 1415 rdcnt=01, o_fifo=7845aa
+# ** Error: write wrong
+#    Time: 1415 ns Started: 1315 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                 1415 rdcnt=01, o_fifo=7845aa
+#                 1435 wrcnt=03, i_fifo=203e96
+#                 1475 wrcnt=04, i_fifo=83b813
+# Test case 3 passed
+# Starting test case 4
+#                 1515 wrcnt=05, i_fifo=bc380d
+#                 1535 wrcnt=06, i_fifo=a7d653
+#                 1555 wrcnt=07, i_fifo=9fdd6b
+#                 1575 wrcnt=08, i_fifo=a62ad5
+#                 1595 wrcnt=09, i_fifo=174a02
+#                 1615 wrcnt=0a, i_fifo=563eae
+#                 1635 wrcnt=0b, i_fifo=ffe91d
+#                 1655 wrcnt=0c, i_fifo=c572cf
+#                 1675 wrcnt=0d, i_fifo=844923
+#                 1695 wrcnt=0e, i_fifo=09650a
+#                 1715 wrcnt=0f, i_fifo=730aca
+#                 1735 wrcnt=10, i_fifo=314c3c
+#                 1755 wrcnt=11, i_fifo=68bdf2
+#                 1775 wrcnt=12, i_fifo=2e618a
+#                 1795 wrcnt=13, i_fifo=c4b341
+#                 1815 wrcnt=14, i_fifo=4b34d8
+#                 1835 wrcnt=15, i_fifo=20f378
+#                 1855 wrcnt=16, i_fifo=8a1289
+#                 1875 wrcnt=17, i_fifo=c50deb
+#                 1895 wrcnt=18, i_fifo=0265b6
+#                 1915 wrcnt=19, i_fifo=4bf9c6
+#                 1935 wrcnt=1a, i_fifo=1513ae
+#                 1955 wrcnt=1b, i_fifo=7502bc
+#                 1975 wrcnt=1c, i_fifo=0fdd2a
+#                 1995 wrcnt=1d, i_fifo=d79a0b
+#                 2015 wrcnt=1e, i_fifo=97be71
+#                 2035 wrcnt=1f, i_fifo=f24185
+#                 2055 wrcnt=20, i_fifo=f2554f
+#                 2075 wrcnt=00, i_fifo=cc603b
+#                 2095 wrcnt=01, i_fifo=06333a
+#                 2115 wrcnt=02, i_fifo=23327e
+#                 2255 wrcnt=04, i_fifo=d99bf1
+#                 2275 wrcnt=05, i_fifo=9c4bd9
+#                 2295 wrcnt=06, i_fifo=230762
+#                 2315 wrcnt=07, i_fifo=35fb4c
+# ** Error: write wrong
+#    Time: 3395 ns Started: 2315 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 2295 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 2275 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 2255 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 2115 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                 3395 rdcnt=01, o_fifo=06333a
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 2075 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 2055 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 2035 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 2015 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 1995 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 1975 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 1955 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 1935 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 1915 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 1895 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 1875 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 1855 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 1835 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 1815 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 1795 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 1775 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 1755 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 1735 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 1715 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 1695 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 1675 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 1655 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 1635 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 1615 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 1595 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 1575 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 1555 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 1535 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 1515 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 1475 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                 3395 rdcnt=01, o_fifo=06333a
+# ** Error: write wrong
+#    Time: 3395 ns Started: 1435 ns  Scope: tb_assert File: E:/labsyns/lab3/tb_assert.sv Line: 112
+#                 3395 rdcnt=01, o_fifo=06333a
+# Test case 4 passed
+# Starting test case 5
+#                 3535 wrcnt=09, i_fifo=f2ae3f
+# FAILED, num fail = 69
+# ** Note: $finish    : E:/labsyns/lab3/tb_assert.sv(264)
+#    Time: 3550 ns  Iteration: 0  Instance: /tb_assert
+# 1
+# Break in Module tb_assert at E:/labsyns/lab3/tb_assert.sv line 264
+# Compile of tb_assert.sv was successful.
+# Compile of fifo.sv was successful.
+# Compile of fifoctrl.v was successful.
+# Compile of ram2.v was successful.
+# 4 compiles, 0 failed with no errors.
+vsim -L altera_mf_ver -L altera_mf -L altera work.tb_assert
+# End time: 13:29:52 on Apr 05,2025, Elapsed time: 0:03:08
+# Errors: 69, Warnings: 3
+# vsim -L altera_mf_ver -L altera_mf -L altera work.tb_assert 
+# Start time: 13:29:52 on Apr 05,2025
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-2009) At least one design unit was compiled with optimization level -O0 or -O1.
+# Use vdir -l command to find such design units.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.tb_assert(fast)
+# Loading work.fifo(fast)
+# Loading altera_mf_ver.altsyncram(fast)
+add wave -position insertpoint sim:/tb_assert/*
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: Admin  Hostname: DESKTOP-EOJON2A  ProcessID: 1240
+#           Attempting to use alternate WLF file "./wlftf8meje".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftf8meje
+run -all
+# Starting test case 1: Writing into FIFO...
+# Test case 1 passed: FIFO is full after 32 writes
+# Starting test case 2: Reading from FIFO...
+# Test case 2 passed: FIFO is empty after 32 reads
+# Starting test case 3
+# Test case 3 passed
+# Starting test case 4
+# Test case 4 passed
+# Starting test case 5
+# PASSED
+# ** Note: $finish    : E:/labsyns/lab3/tb_assert.sv(264)
+#    Time: 3550 ns  Iteration: 0  Instance: /tb_assert
+# 1
+# Break in Module tb_assert at E:/labsyns/lab3/tb_assert.sv line 264
+#  Trace back: can't read "::vsimPriv(tbarBtnIgnore)": no such element in array
+#     while executing
+# "if { ! $::vsimPriv(tbarBtnIgnore) } {
+#             ButtonInvoke $b $m
+#          }"
+#     (procedure "Tbar::BMenu::Action" line 51)
+#     invoked from within
+# "Tbar::BMenu::Action release .main_pane.wave.interior.cs.controls.tbf3.step.tb.button_135 .main_pane.wave.interior.cs.controls.tbf3.step.tb.button_135...."
+#     (command bound to event)
+#    <2:C:/intelFPGA/23.1std/questa_fse/win64/tk8.6/bgerror.tcl:106: ::tkerror {can't read "::vsimPriv(tbarBtnIgnore)": no such element in array}
+#    <1:eval:1: ::tk::dialog::error::bgerror {can't read "::vsimPriv(tbarBtnIgnore)": no such element in array}
